@@ -21,7 +21,9 @@
   border-bottom: 1px solid #222222;
   margin-bottom: 32px;
 } */
-
+* {
+  margin: 0px;
+}
 .remember-me-checkbox-container {
   display: flex;
   align-items: center;
@@ -247,3 +249,31 @@ input[type="radio"]:checked:after {
   visibility: visible;
   border: 2px solid white;
 } */
+/* footer */
+.footer {
+  width: 100%;
+  height: 40px;
+  background-image: url("assets/header pattern svg.svg");
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.footer img {
+  margin-right: 12px;
+}
+.footer div {
+  padding-left: 12px;
+  border-left: 1px solid #666666;
+}
+.footer .tc {
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: 8px;
+}
+.footer .title {
+  color: #616161;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 11px;
+}
