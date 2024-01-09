@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashbord.css" />
+    <title>Your Website</title>
+    <!-- Add this script tag at the end of your body or in your head -->
+  </head>
+  <body>
+    <script>
+      function toggleNavbar() {
+        var x = document.querySelector(".navbar .nav-links");
+        x.classList.toggle("responsive");
+      }
+    </script>
+    <!-- <div class="navbar">
+      <div class="logo">
+        <img src="your-logo.png" alt="Website Logo" />
+        <span>Your Website</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+      </div>
+      <div class="notifications">
+        <a href="#"
+          ><img src="assets/icons/alerts.svg" alt="Notification Icon"
+        /></a>
+      </div>
+    </div> -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="your-logo.png" alt="Website Logo" />
+        <span>Your Website</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+      </div>
+      <div class="notifications">
+        <a href="#"
+          ><img src="assets/icons/alerts.svg" alt="Notification Icon"
+        /></a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+        &#9776;
+        <!-- Hamburger icon -->
+      </a>
+    </div>
+
+    <!-- Your website content goes here -->
+  </body>
+</html>

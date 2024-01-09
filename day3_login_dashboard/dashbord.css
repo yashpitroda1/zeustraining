@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+    padding: 15px;
+}
+
+.logo img {
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+.logo span {
+    color: white;
+    font-size: 20px;
+}
+
+.nav-links {
+    float: left;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.notifications {
+    float: right;
+    padding: 15px;
+}
+
+.notifications img {
+    height: 25px; /* Adjust the height as needed */
+}
+
+/* Media query for tablet size */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 16px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar .icon {
+        display: block;
+        float: right;
+        padding: 16px;
+    }
+
+    .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar.responsive .nav-links {
+        display: block;
+    }
+}
