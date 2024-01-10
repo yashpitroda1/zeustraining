@@ -18,7 +18,9 @@ body {
   justify-content: start;
   align-items: center;
   background-image: url("assets/header pattern svg.svg");
-  margin-bottom: 24px;
+  /* background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%; */
 }
 .navbar .logo {
   display: flex;

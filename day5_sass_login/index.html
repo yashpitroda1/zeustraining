@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="assets/icons/logo used in header.svg"
+        class="header-logo"
+        alt=""
+      />
+    </div>
+    <div class="login-container">
+      <div class="login-header">
+        <img src="assets/icons/back.svg" alt="" style="width: 26px" />
+        <div class="login-text">
+          <p>Log in with Quantum</p>
+        </div>
+      </div>
+
+      <form class="login-form">
+        <!-- <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+       -->
+        <div class="radio-card">
+          <div class="radio-block">
+            <input
+              class="radio-btn"
+              type="radio"
+              id="district"
+              name="school"
+              value="District"
+            />
+            <label class="radio-label" for="district">District</label>
+          </div>
+          <div class="radio-block">
+            <input
+              class="radio-btn"
+              type="radio"
+              id="Independent-school"
+              name="school"
+              value="Independent school"
+            />
+            <label class="radio-label" for="Independent-school"
+              >Independent school</label
+            >
+          </div>
+        </div>
+        <div class="dropdown-container state-bottom-margin">
+          <label class="state-label" for="State">State*</label>
+
+          <select class="dropdown-select" name="State" id="state">
+            <option value="Alabama">Alabama</option>
+            <option value="bihar">Bihar</option>
+            <option value="assam">Assam</option>
+            <option value="chhattisgarh">Chhattisgarh</option>
+          </select>
+        </div>
+
+        <div class="dropdown-container district-bottom-margin">
+          <label class="state-label" for="district">District*</label>
+
+          <select class="dropdown-select" name="district" id="district">
+            <option value="alabama_school_district">
+              Alabama School District
+            </option>
+            <option value="bihar">Bihar</option>
+            <option value="assam">Assam</option>
+            <option value="chhattisgarh">Chhattisgarh</option>
+          </select>
+        </div>
+
+        <div class="username-container">
+          <input
+            type="text"
+            id="username_email"
+            name="username_email"
+            placeholder="Username/Email ID*"
+            class="text-input"
+          />
+          <div class="underline"></div>
+          <div class="forgot-container">
+            <span class="forgot-text">FORGOT USERNAME?</span>
+          </div>
+        </div>
+
+        <div class="password-container">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password*"
+            class="text-input"
+          />
+          <i class="fa-solid fa-eye" style="font-size: 14px; color: green"></i>
+        </div>
+        <div class="underline"></div>
+
+        <div class="forgot-container">
+          <span class="forgot-text">FORGOT PASSWORD?</span>
+        </div>
+        <div class="remember-me-checkbox-container">
+          <input type="checkbox" id="rememberMe" name="rememberMe" />
+          <label for="rememberMe" class="remember-me-label">Remember Me</label>
+        </div>
+        <div class="submit-btn-container">
+          <button type="submit" class="submit-btn">LOG IN</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="link-container">
+      <a href="http://" class="links">About</a>
+
+      <a href="http://" class="links">Contact Us</a>
+    </div>
+    <div class="footer">
+      <img src="quantum_screen_assets/icons/logo used in footer.svg" alt="" />
+      <div>
+        <span class="tc">Copyright © 2020-2021</span>
+        <span class="title">Zeus Systems Pvt. Ltd.</span>
+        <span class="tc">All rights reserved.</span>
+      </div>
+    </div>
+  </body>
+</html>
