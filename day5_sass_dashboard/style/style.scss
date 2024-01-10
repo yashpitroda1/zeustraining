@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+
+$customFont: "Quicksand", sans-serif;
+$fwReguler: 400;
+$fwMedium: 500;
+$fwBold: 700;
+$fontSize1: 24px;
+$fontSize2: 16px;
+$fontSize3: 14px;
+$fontSize4: 12px;
+$fontSize5: 10px;
+
+$primaryColor1: #3fd28b;
+$bedgeBgColor: #2a7ff3;
+$bgColor1: #eeeeee;
+$bgColor2: #ffffff;
+$bgColor3: #8ddc97;
+
+$textColorLight: #ffffff;
+
+$textColorPrimary1: #1f7a54;
+$textColorPrimary2: #3fd28b;
+
+$textColorDark1: #222222;
+
+$textColorDark2: #616161;
+$textColorDark3: #666666;
+$textColorDark4: #686868;
+$textColorDark5: #333333;
+
+$alertForegroundColor: #d80000;
+$alertBackgroundColor: #ffe4e6;
+
+// 10 12 14 16 24
+@mixin flex($justifyContent, $alignItem) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $customFont;
+  background-color: $bgColor1;
+}
+.margin-h {
+  margin: 0px 24px;
+}
+.divider-bold {
+  opacity: 0.8;
+}
+.divider-light {
+  opacity: 0.4;
+}
+
+/* header */
+
+.navbar {
+  background: url(../quantum_screen_assets/header_pattern_image.png);
+  //   width: 100%;
+  @include flex(start, center);
+  height: 48px;
+  padding: 0px 24px;
+  margin-bottom: 24px;
+  .logo {
+    @include flex(center, center);
+  }
+  .navbar-container {
+    @include flex(center, center);
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    .links {
+      a {
+        text-decoration: none !important;
+        margin-right: 32px;
+        padding: 10px 0px;
+        color: $primaryColor1;
+        font-weight: $fwBold;
+        font-size: $fontSize3;
+      }
+      .selected {
+        color: #ffffff;
+        border-bottom: 4px solid #ffffff;
+      }
+    }
+    .icons {
+      @include flex(space-between, center);
+    }
+    #alerts {
+      margin-right: 32px;
+    }
+    #announcements {
+      margin-right: 32px;
+    }
+    #menu {
+      display: none;
+      width: 100%;
+    }
+  }
+}
+// body
+.courses-classes {
+  background-color: $bgColor3;
+  margin: 0px 24px;
+  margin-bottom: 37px;
+  height: 64px;
+  display: flex;
+
+  .courses-classes-container {
+    @include flex(center, center);
+    width: 50%;
+  }
+  .selected {
+    border-bottom: 4px solid $textColorDark1;
+  }
+  .courses-classes-container {
+    .count {
+      color: $textColorDark1;
+      font-weight: $fwBold;
+      font-size: $fontSize1;
+      margin: 0px 8px;
+    }
+    title {
+      color: $textColorDark1;
+      font-weight: $fwMedium;
+      font-size: $fontSize2;
+    }
+  }
+  #courses-btn {
+  }
+  #classes-btn {
+  }
+}
+.opration {
+  height: 28px;
+  margin: 0px 24px;
+  margin-bottom: 17px;
+
+  display: flex;
+  justify-content: space-between;
+  .title {
+    display: flex;
+    align-items: end;
+    font-size: $fontSize4;
+    color: #686868;
+  }
+  .dropdown-container {
+    height: 28px;
+    display: flex;
+    align-items: top;
+    label {
+      display: flex;
+      align-items: end;
+      font-size: $fontSize4;
+      color: #686868;
+      margin-right: 6px;
+      margin-bottom: 7px;
+    }
+    img {
+      height: 24px;
+      width: 12px;
+    }
+    select {
+      width: 156px;
+      height: 24px;
+      font-size: $fontSize2;
+      outline: none;
+      margin-right: 24px;
+      background-color: $bgColor1;
+      border: none;
+      border-bottom: 1px solid $textColorDark1;
+      cursor: pointer;
+      color: $textColorDark5;
+      /* padding-top: 0px; */
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-gap: 24px;
+  margin: 0px 24px;
+  margin-top: 16px;
+  margin-bottom: 33px;
+  grid-template-columns: repeat(auto-fit, minmax(476px, 1fr));
+  grid-auto-rows: 246px;
+  .grid-card {
+    background-color: $bgColor2;
+    .expired-container {
+      height: 18px;
+      margin-bottom: 6px;
+      .expired-card {
+        display: none;
+        width: 100%;
+        justify-content: start;
+        align-items: start;
+      }
+      .expired-card.selected {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: 50px;
+        background-color: $alertBackgroundColor;
+        color: $alertForegroundColor;
+        font-size: $fontSize5;
+        font-weight: 500;
+        padding-left: 5px;
+        padding-top: 4px;
+        /* text-align: top; */
+      }
+    }
+    .img-info {
+      display: flex;
+      align-items: start;
+      margin: 0px 24px;
+      margin-bottom: 16px;
+      img {
+        height: 157px;
+        width: 132px;
+      }
+      .info-container {
+        display: flex;
+        width: 100%;
+
+        margin-left: 16px;
+        flex-direction: column;
+        justify-content: start;
+        .title {
+          display: flex;
+          align-items: start;
+          justify-content: space-between;
+          margin-bottom: 7px;
+          span {
+            font-size: $fontSize2;
+            font-weight: $fwMedium;
+            color: $textColorDark1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          img {
+            margin-left: 8px;
+            width: 20px;
+            height: 24px;
+          }
+        }
+        .subtitle {
+          margin-bottom: 7px;
+          span {
+            font-size: $fontSize4;
+            font-weight: $fwMedium;
+            color: $textColorDark3;
+          }
+          div {
+            display: inline;
+            .green {
+              color: $textColorPrimary1;
+            }
+          }
+          .grade {
+            margin-left: 8px;
+            padding-left: 9px;
+
+            border-left: 0.5px solid $textColorDark3;
+          }
+        }
+        .subtitle2 {
+          margin-bottom: 18px;
+          div {
+            display: inline;
+          }
+          .num {
+            color: $textColorDark3;
+            font-size: $fontSize4;
+            font-weight: $fwBold;
+          }
+          .text {
+            color: $textColorDark3;
+            font-size: $fontSize4;
+            font-weight: $fwMedium;
+            margin-right: 6px;
+          }
+        }
+        .subtitle3 {
+          margin-bottom: 8px;
+          margin-right: 40px;
+          select {
+            width: 100%;
+            padding-bottom: 2px;
+            outline: none;
+            border: none;
+            font-size: $fontSize2;
+            color: $textColorDark1;
+            border-bottom: 0.5px solid $textColorDark3;
+          }
+        }
+        .subtitle4 {
+          .date {
+            border-left: 0.5px solid $textColorDark3;
+            margin: 0px;
+            padding-left: 9px;
+          }
+          span {
+            color: $textColorDark3;
+            font-size: $fontSize4;
+            font-weight: $fwReguler;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .card-opration {
+      margin: 0px 48px;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+.link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  .links {
+    text-decoration: none !important;
+
+    margin-right: 10px;
+    color: $textColorPrimary1;
+    font-weight: $fwMedium;
+    font-size: $fontSize3;
+  }
+}
+
+/* footer */
+.footer {
+  height: 40px;
+  background-image: url(../quantum_screen_assets/header_pattern_image.png);
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  img {
+    margin-right: 12px;
+  }
+  div {
+    padding-left: 12px;
+    border-left: 1px solid $textColorDark3;
+  }
+  .tc {
+    color: $textColorDark2;
+    font-size: $fontSize4;
+    font-weight: $fwReguler;
+    margin-right: 8px;
+  }
+  .title {
+    color: $textColorDark2;
+    font-size: $fontSize4;
+    font-weight: $fwBold;
+    margin-right: 11px;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .navbar {
+    .navbar-container {
+      .links {
+        display: none;
+        width: 100%;
+      }
+      #account_circle {
+        margin-right: 32px;
+      }
+      #menu {
+        display: flex;
+      }
+    }
+  }
+}
