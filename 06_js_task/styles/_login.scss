@@ -1,0 +1,112 @@
+.login-quantum {
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: quantum-font;
+
+    .form-quantum {
+      background-color: #ffffff;
+      width: 50%;
+      margin: 40px;
+      padding-right: 10px;
+      border-top: 2px solid #3ac7ec;
+      font-family: inherit;
+
+      div {
+        margin-left: 15px;
+
+        .heading-form {
+          display: flex;
+
+          h3 {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      div {
+        .top-select {
+          margin-bottom: 10px;
+
+          .input {
+            border: 0px;
+            width: 99%;
+            margin: 10px 0;
+            border-bottom: 1px solid #eeeeee;
+            font-size: medium;
+            font-family: inherit;
+            font-weight: 500;
+            accent-color: #1f7a54;
+          }
+        }
+      }
+
+      div {
+        .input {
+          border: 0px;
+          width: 99%;
+          margin: 10px 0;
+          border-bottom: 1px solid #eeeeee;
+          font-size: medium;
+          font-family: inherit;
+          font-weight: 500;
+          accent-color: #1f7a54;
+        }
+
+        .select {
+          margin-left: 5px;
+          font-size: smaller;
+        }
+      }
+
+      div {
+        .profile-input {
+          margin: 20px 0;
+          font-family: inherit;
+
+          input {
+            border: 0px;
+            width: 99%;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            border-bottom: 1px solid #eeeeee;
+            font-size: medium;
+            font-family: inherit;
+          }
+
+          .forgot-profile {
+            margin-top: 0;
+            display: block;
+            font-size: small;
+            text-align: end;
+            border: none;
+            color: #1f7a54;
+            font-weight: 600;
+            text-decoration: none;
+          }
+        }
+      }
+
+      #cookie-ckbox {
+        accent-color: #1f7a54;
+      }
+
+      .btn {
+        text-align: center;
+        margin: 20px;
+        font-family: inherit;
+
+        #submit-btn {
+          margin: 10px 0;
+          padding: 10px 50px;
+          font-family: inherit;
+          color: black;
+          font-weight: 700;
+          background-color: #1f7a54;
+          border: 0;
+        }
+      }
+  }
+}

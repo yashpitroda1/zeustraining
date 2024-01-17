@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./styles/dashboard-design.css">
+    
+</head>
+<body>
+    <div class="quantum-dashboard">
+            <div class="header-quantum-dashboard">
+                <div class="logo-header">
+                    <img src="icons/logo used in header.svg" alt="Quantum logo" />
+                </div>
+                <div class="navbar">
+                    <a id="underline" href="#">DASHBOARD</a>
+                    <a href="#">CONTENT</a>
+                    <a href="#">USERS</a>
+                    <a href="#">REPORTS</a>
+                    <a href="#">ADMIN</a>
+                    <img src="icons/alerts.svg" alt="">
+                    <img src="icons/announcements.svg" alt="">
+                    <img src="icons/account_circle.svg" alt="">
+                    <img id="sm-screen" src="icons/hamburger-menu.svg" alt="">
+                </div>            
+            </div>
+          <!-- complete up until here. -->
+
+          <div class="content-dashboard">
+                <div class="number-content">
+                        <div class="child-number-content one">
+                            <img src="icons/courses.svg" alt="">
+                            <h2>4</h2>
+                            <p>Courses</p>
+                        </div>
+                        <div class="child-number-content two">
+                            <img src="icons/classes.svg" alt="">
+                            <h2>4</h2>
+                            <p>Classes</p>
+                        </div>
+
+                    </div>
+                    <div class="info-content">
+                        <div>
+                            <p class="small-info-content">Showing 4 of 4 courses</p>
+                        </div>
+                        <div class="right-info-content">
+                            <p class="small-info-content">Sort By:</p>
+                            <select name="sort-course" id="sort" class="sort">
+                                <option value="Course Name">Course Name</option>
+                                <option value="Course length">Course Length</option>
+                            </select>
+                            <img src="icons/sort.svg" alt="">                      
+                        </div>
+
+                </div>
+
+                <div class="grid" id="dashboard-main">
+
+                </div>
+
+
+          <div class="footer">
+            <div class="links">
+                <a href="#">About</a>
+                <p>|</p> 
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="info-footer">
+                <img src="icons/logo used in footer.svg" alt="Quantum-logo">
+                <p class="separate-logo">|</p>
+                <p>Copyright &copy; 2021-2022 </p>
+                <p>Zeus Systems Pvt. Ltd.</p>
+                <p>All rights reserved.</p>
+            </div>
+        </div>
+        
+
+    </div>
+    <script src="dashboard.js"></script>    
+</body>
+</html>

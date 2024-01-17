@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <div class="quantum">
+      <div class="header-quantum">
+        <img src="icons/logo used in header.svg" alt="Quantum logo" />
+      </div>
+
+      <div class="login-quantum">
+        <div class="form-quantum">
+          <div>
+            <div class="heading-form">
+              <img src="icons/back.svg" alt="" />
+              <h3>Log in with Quantum</h3>
+            </div>
+
+            <div>
+              <form action="dashboard.html">
+                <div class="top-select">
+                  <input
+                    type="radio"
+                    id="district"
+                    name="type"
+                    value="district"
+                  />
+                  <label for="district">District</label>
+                  <input
+                    type="radio"
+                    id="Independent-school"
+                    name="type"
+                    value="Independent-school"
+                  />
+                  <label for="Independent-school">Independent school</label
+                  ><br />
+                </div>
+
+                <div>
+                  <label for="state" class="select-state select">State*</label
+                  ><br />
+                  <select name="state" id="state" class="input">
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Maharastra">Maharastra</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                  </select>
+
+                  <label for="district" class="select-district select"
+                    >District*</label
+                  ><br />
+                  <select name="district" id="district" class="input">
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Thiruvanantpuram">Thiruvanantpuram</option>
+                    <option value="Jaipur">Jaipur</option>
+                  </select>
+                </div>
+
+                <div class="profile-input">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Username/Email ID*"
+                  />
+                  <a class="forgot-profile" href="#">FORGOT USERNAME?</a>
+                  <input
+                    type="password"
+                    class="input"
+                    placeholder="Password*"
+                  />
+                  <a class="forgot-profile" href="#">FORGOT PASSWORD?</a>
+                </div>
+                <input type="checkbox" name="cookie-ckbox" id="cookie-ckbox" />
+                <label for="cookie-ckbox"> Remember Me</label> <br />
+
+                <div class="btn">
+                  <button id="submit-btn">LOG IN</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="links">
+          <a href="#">About</a>
+          <p>|</p>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="info-footer">
+          <img src="icons/logo used in footer.svg" alt="Quantum-logo" />
+          <p class="separate-logo">|</p>
+          <p>Copyright &copy; 2021-2022</p>
+          <p>Zeus Systems Pvt. Ltd.</p>
+          <p>All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: quantum-font;
+  src: url("/SCSS/Quicksand/Quicksand-VariableFont_wght.ttf");
+}
+
+html,
+body{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: quantum-font;
+}
+
+@import './header';
+
+@import './login';
+
+@import './footer';
+
+
+@media screen and (max-width: 768px) {
+
+    .quantum{
+      display: flex;
+      flex-direction: column;
+      height: 1024px; 
+      width: 768px;
+
+      .login-quantum{
+        height: 60%;
+      }
+      .form-quantum{
+        height: fit-content;
+        
+      }
+
+    } 
+
+}
