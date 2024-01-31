@@ -203,3 +203,85 @@ menuPopup.addEventListener("mouseout", function () {
   notificationCard.style.display = "none";
   menuPopup.style.display = "none";
 });
+
+function toggleCheckbox(checkboxContainer) {
+  const checkbox = checkboxContainer.querySelector(".checkbox");
+  const v = checkboxContainer.parentElement.parentElement;
+  if (checkbox.src.includes("checkbox-checked.svg")) {
+    checkbox.src = "quantum_screen_assets/icons/back.svg";
+    v.classList.remove("selected");
+  } else {
+    checkbox.src = "quantum_screen_assets/icons/checkbox-checked.svg";
+    v.classList.add("selected");
+  }
+}
+function toggleCheckboxnotification(checkboxContainer) {
+  const checkbox = checkboxContainer.querySelector(".checkbox");
+  const v = checkboxContainer.parentElement.parentElement;
+  if (checkbox.src.includes("checkbox-checked.svg")) {
+    checkbox.src = "quantum_screen_assets/icons/back.svg";
+    v.classList.remove("selected");
+  } else {
+    checkbox.src = "quantum_screen_assets/icons/checkbox-checked.svg";
+    v.classList.add("selected");
+  }
+}
+
+var contentSubmenu = document.querySelector("#content-submenu");
+var contentDiv = document.querySelector("#content-div");
+
+contentDiv.addEventListener("click", function () {
+  console.log("hi");
+  if (contentSubmenu.style.display === "flex") {
+    contentSubmenu.style.display = "none";
+    contentDiv.style.backgroundColor = "#FFFFFF";
+  } else {
+    contentSubmenu.style.display = "flex";
+    contentDiv.style.backgroundColor = "#F3F3F3";
+    contentSubmenu.style.backgroundColor = "#F3F3F3";
+  }
+});
+
+var usersSubmenu = document.querySelector("#users-submenu");
+var usersDiv = document.querySelector("#users-div");
+
+usersDiv.addEventListener("click", function () {
+  console.log("hi");
+  if (usersSubmenu.style.display === "flex") {
+    usersSubmenu.style.display = "none";
+    usersDiv.style.backgroundColor = "#FFFFFF";
+  } else {
+    usersSubmenu.style.display = "flex";
+    usersDiv.style.backgroundColor = "#F3F3F3";
+    usersSubmenu.style.backgroundColor = "#F3F3F3";
+  }
+});
+
+var reportsSubmenu = document.querySelector("#reports-submenu");
+var reportsDiv = document.querySelector("#reports-div");
+
+reportsDiv.addEventListener("click", function () {
+  console.log("hi");
+  if (reportsSubmenu.style.display === "flex") {
+    reportsSubmenu.style.display = "none";
+    reportsDiv.style.backgroundColor = "#FFFFFF";
+  } else {
+    reportsSubmenu.style.display = "flex";
+    reportsDiv.style.backgroundColor = "#F3F3F3";
+    reportsSubmenu.style.backgroundColor = "#F3F3F3";
+  }
+});
+var adminSubmenu = document.querySelector("#admin-submenu");
+var adminDiv = document.querySelector("#admin-div");
+
+adminDiv.addEventListener("click", function () {
+  console.log("hi");
+  if (adminSubmenu.style.display === "flex") {
+    adminSubmenu.style.display = "none";
+    adminDiv.style.backgroundColor = "#FFFFFF";
+  } else {
+    adminSubmenu.style.display = "flex";
+    adminDiv.style.backgroundColor = "#F3F3F3";
+    adminSubmenu.style.backgroundColor = "#F3F3F3";
+  }
+});

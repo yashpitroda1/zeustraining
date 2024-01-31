@@ -8,34 +8,6 @@
   justify-content: $justifyContent;
   align-items: $alignItem;
 }
-.menu-popup {
-  display: none;
-  position: absolute;
-  top: 48px;
-  right: 16px;
-  width: 280px;
-  background-color: #fff;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-
-  a {
-    display: block;
-    padding: 16px;
-    text-decoration: none;
-    color: #1f7a54;
-    font-weight: $fwMedium;
-    font-size: $fontSize3;
-  }
-  img {
-    width: 32px;
-    height: 32px;
-  }
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 
 .single-icon {
   display: flex;
@@ -96,6 +68,36 @@ body {
       .selected {
         color: #ffffff;
         border-bottom: 4px solid #ffffff;
+      }
+    }
+    .menu-popup {
+      display: none;
+      position: absolute;
+      top: 48px;
+      right: 16px;
+      width: 280px;
+      background-color: #fff;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      .submenu {
+        padding-left: 16px;
+      }
+      a {
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+        color: #1f7a54;
+        font-weight: $fwMedium;
+        font-size: $fontSize3;
+      }
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      .item-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
     .icons {
