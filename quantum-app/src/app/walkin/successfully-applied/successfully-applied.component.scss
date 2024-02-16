@@ -1,0 +1,122 @@
+.successfully-applied-card {
+    margin-left: 48px;
+    margin-right: 48px;
+    margin-top: 76px;
+    position: relative;
+
+
+    mat-card {
+        .image-container {
+            position: absolute;
+            top: -8%;
+            /* Align horizontally to the center */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Adjust for centering */
+            height: 100px;
+            width: 100px;
+            background-color: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                height: 80px;
+                filter: var(--filter-svgicon-whilte);
+            }
+        }
+
+        .success-title {
+            text-align: center;
+            margin-top: 74px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: var(--fontsize-subheading);
+            color: var(--color-text-dark);
+            font-weight: var(--fontweight-medium);
+        }
+
+        .datetime-container {
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            .title {
+                font-size: var(--fontsize-small);
+                color: var(--color-text-light);
+                font-weight: var(--fontweight-medium);
+                margin-bottom: 8px;
+            }
+
+            .date {
+
+                font-size: var(--fontsize-normal);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+                margin-bottom: 8px;
+            }
+
+            .time {
+
+                font-size: var(--fontsize-normal);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+            }
+        }
+
+        .vanue-container {
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            .title {
+                font-size: var(--fontsize-small);
+                color: var(--color-text-light);
+                font-weight: var(--fontweight-medium);
+                margin-bottom: 8px;
+            }
+
+            .info {
+
+                font-size: var(--fontsize-normal);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+
+
+            }
+        }
+
+        .thingstoremember-container {
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            .title {
+                font-size: var(--fontsize-small);
+                color: var(--color-text-light);
+                font-weight: var(--fontweight-medium);
+                margin-bottom: 8px;
+            }
+
+            .info {
+                text-align: start;
+                font-size: var(--fontsize-normal);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+            }
+        }
+
+        .download-button-container {
+            margin-top: 24px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .download-button {
+                background-color: var(--color-buttom-primary);
+                color: var(--color-navyblue-dark);
+            }
+        }
+    }
+}

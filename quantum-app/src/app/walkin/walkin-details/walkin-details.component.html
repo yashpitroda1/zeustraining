@@ -1,0 +1,59 @@
+<div style="height: 26px;"></div>
+
+<app-title-card [id]="walkinObject.id" [walkinObject]="walkinObject"
+    (applyEventEmitter)="onTapOnWalkinApplyHandler($event)"></app-title-card>
+
+<app-timeslot-preferances-card [walkinObject]="walkinObject"></app-timeslot-preferances-card>
+
+
+<div class="job-role-list-container" *ngFor="let jobRole of walkinObject.jobRoleList;">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="jobRole.istoggle= true" (closed)="jobRole.istoggle = false" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{jobRole.roleName}}
+                </mat-panel-title>
+                <mat-panel-description>
+
+                    <img *ngIf="!jobRole.istoggle" src="/assets/images/expand_less_black_24dp.svg"
+                        class="flip-arrow-icon" alt="">
+                    <img *ngIf="jobRole.istoggle" src="/assets/images/expand_less_black_24dp.svg"
+                        class="unflip-arrow-icon" alt="">
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="jobrole-content">
+                <div class="instruction-container mb16">
+                    <div class="title">gross compensation package :</div>
+                    <div class="info">
+                        <div>
+                            {{jobRole.grossCompensationPackage}}
+                        </div>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="instruction-container mb16">
+                    <div class="title">Role Description :</div>
+                    <div class="info">
+                        <div *ngFor="let desc of jobRole.roleDescription">
+                            - {{desc}}
+                        </div>
+                    </div>
+                </div>
+
+                <mat-divider></mat-divider>
+                <div class="instruction-container">
+                    <div class="title">Requirements :</div>
+                    <div class="info">
+                        <div *ngFor="let req of jobRole.requirements">
+                            - {{req}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<button class="apply-bottom-button" (click)="onTapOnWalkinApplyHandler({data:'tapped at bottom'})"
+    mat-raised-button>APPLY</button>

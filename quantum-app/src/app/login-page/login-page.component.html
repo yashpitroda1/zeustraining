@@ -1,0 +1,33 @@
+<div class="loginform">
+  <h2>Log in</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="profile-input">
+      <input type="text" class="input" name="username" placeholder="Username/Email ID*" ngModel required matInput />
+      <a class="forgot-profile" href="#">FORGOT USERNAME?</a>
+
+      <input type="password" class="input" placeholder="Password*" name="password" ngModel required matInput />
+      <a class="forgot-profile" href="#">FORGOT PASSWORD?</a>
+
+
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="cookie-ckbox" id="cookie-ckbox" ngModel />
+      <label for="cookie-ckbox"> Remember Me</label>
+    </div>
+
+
+    <div class="btn">
+      <button id="submit-btn" mat-raised-button>LOG IN</button>
+    </div>
+
+  </form>
+
+  <div class="create-account">
+    <p>Not registered yet?</p>
+    <a href="#" id="newacc">CREATE AN ACCOUNT</a>
+  </div>
+
+  <button class="btn btn-default" (click)="onLogin()">Login</button>
+  <button class="btn btn-default" (click)="onLogout()">Logout</button>
+
+</div>

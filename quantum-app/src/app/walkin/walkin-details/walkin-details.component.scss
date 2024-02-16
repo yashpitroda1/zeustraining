@@ -1,0 +1,86 @@
+.apply-bottom-button {
+    display: none;
+    // when max-width: 480px then block
+}
+
+.job-role-list-container {
+    margin: 16px 24px;
+
+
+    mat-expansion-panel {
+        mat-expansion-panel-header:hover {
+            background-color: var(--color-blue-light);
+        }
+
+        mat-expansion-panel-header {
+            padding: 0px;
+            padding-left: 16px;
+            background-color: var(--color-blue-light);
+            height: 56px;
+
+            mat-panel-title {
+                font-size: var(--fontsize-subheading-small);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+                align-items: center;
+            }
+
+            mat-panel-description {
+                justify-content: end;
+                align-items: center;
+
+                .flip-arrow-icon {
+                    transform: rotate(-180deg);
+                    // border-right: 1px solid var(--color-gray-dark);
+
+                }
+
+                .unflip-arrow-icon {
+                    transform: rotate(0deg);
+                    // border-left: 1px solid var(--color-gray-dark);
+                }
+
+                img {
+
+                    filter: var(--filter-svgicon-primary);
+                }
+            }
+        }
+
+        .jobrole-content {
+            .mb16 {
+                margin-bottom: 16px;
+            }
+
+            .instruction-container {
+                margin-top: 16px;
+
+                .title {
+                    font-size: var(--fontsize-small);
+                    color: var(--color-text-light);
+                    font-weight: var(--fontweight-medium);
+                    margin-bottom: 16px;
+                }
+
+                .info {
+                    text-align: start;
+                    font-size: var(--fontsize-normal);
+                    color: var(--color-text-dark);
+                    font-weight: var(--fontweight-medium);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .apply-bottom-button {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        right: 0%;
+        left: 0%;
+        background-color: var(--color-buttom-primary);
+        color: var(--color-navyblue-dark);
+    }
+}

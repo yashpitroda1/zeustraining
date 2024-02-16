@@ -1,0 +1,87 @@
+mat-card {
+
+    margin: 0px 24px;
+    margin-top: 16px;
+
+    mat-card-content {
+        .timeslot-perferances-content {
+
+            .title-container {
+                font-size: var(--fontsize-subheading-small);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+                margin-bottom: 24px;
+            }
+
+            .select-time-container {
+                .title {
+                    font-size: var(--fontsize-small);
+                    color: var(--color-text-light);
+                    font-weight: var(--fontweight-medium);
+                    margin-bottom: 16px;
+                }
+
+                .content {
+                    text-align: start;
+                    font-size: var(--fontsize-subheading-small);
+                    color: var(--color-text-dark);
+                    font-weight: var(--fontweight-medium);
+
+                    .radio-container {
+                        .radio-tile {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .select-jobrole-container {
+                margin-top: 16px;
+
+                .title {
+                    font-size: var(--fontsize-small);
+                    color: var(--color-text-light);
+                    font-weight: var(--fontweight-medium);
+                    margin-bottom: 18px;
+                }
+
+                .content {
+                    text-align: start;
+                    font-size: var(--fontsize-subheading-small);
+                    color: var(--color-text-dark);
+                    font-weight: var(--fontweight-medium);
+
+                    .checkbox-container {
+                        .checkbox-tile {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .upload-resume-container {
+                margin-top: 19px;
+                font-size: var(--fontsize-normal);
+                color: var(--color-text-primary);
+                font-weight: var(--fontweight-medium);
+
+                button {
+                    padding: 0px;
+
+                    div {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    img {
+                        margin-right: 8px;
+                        filter: var(--filter-svgicon-primary);
+                    }
+
+                }
+            }
+        }
+    }
+}

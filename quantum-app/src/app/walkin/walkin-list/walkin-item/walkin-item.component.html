@@ -1,0 +1,40 @@
+<div class="item-card">
+    <div class="expiring-container" *ngIf="walkinObject.isexpring">
+        <div>{{walkinObject.expiredTitle}}</div>
+    </div>
+    <div class="title-container">
+        <p>{{walkinObject.title}}</p>
+    </div>
+    <div class="date-time-location">
+        <p class="date-time-title">Date & Time :</p>
+        <p class="date-time-location-container">
+            <span class="date-time-content">10-Jul-2021 to 11-Jul-2021</span>
+            <mat-divider [vertical]="true" style="height:5px ;width: 1px; display: inline;"></mat-divider>
+            <span class="location-container">
+                <span class="icon-container"><img class="location-icon" src="/assets/images/location_on_black_24dp.svg"
+                        alt="location: "></span>
+                <span class="location-content">Mumbai</span>
+            </span>
+        </p>
+    </div>
+    <mat-divider [inset]="true"></mat-divider>
+    <!-- <mat-divider></mat-divider> -->
+    <div class="job-role-container">
+        <!-- block -->
+        <p class="jobrole-title">Job Roles :</p>
+        <div class="jobrole-grid">
+            <div class="jobrole-card" *ngFor="let jobroleitem of walkinObject.jobRoleList;let i=index;">
+                <img src="/assets/images/{{jobroleitem.roleName}}.svg" alt="">
+                <div class="content">{{jobroleitem.roleName}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="note-container">
+        <span class="note" *ngIf="walkinObject.isNote">
+            {{walkinObject.note}}
+        </span>
+    </div>
+    <div class="view-more-button">
+        <button class="more-button" (click)="onTapViewMoreDetails()" mat-raised-button>VIEW MORE DETAILS</button>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url(assets/fonts/Quicksand_font/Quicksand-VariableFont_wght.ttf);
+    font-weight: 400 500 700;
+    font-style: normal;
+}
+
+:root {
+    --filter-svgicon-gray: invert(38%) sepia(6%) saturate(4%) hue-rotate(323deg) brightness(98%) contrast(82%);
+    --filter-svgicon-whilte: invert(92%) sepia(99%) saturate(38%) hue-rotate(191deg) brightness(107%) contrast(99%);
+    --filter-svgicon-primary: invert(33%) sepia(73%) saturate(443%) hue-rotate(103deg) brightness(98%) contrast(86%);
+
+    // color
+    --color-gray-dark: #666666;
+    --color-gray-light: #EEEEEE;
+    --color-navyblue-dark: #1F2834;
+    --color-navyblue-light: #3C4E62;
+    --color-red-dark: #d80000;
+    --color-red-light: #ffe4e6;
+    --color-blue-dark: #31B9E4;
+    --color-blue-light: #DBEFFF;
+
+    /* Primary Colors */
+    --color-primary: #3FD28B;
+    --color-primary-dark: #1F7A54;
+
+    /* Background Colors */
+    --color-background-body: #EEEEEE;
+    --color-background-header: #1F2834;
+    --color-background-card: #FFFFFF;
+
+    /* buttton Colors */
+    --color-buttom-primary: var(--color-primary);
+    --color-buttom-secondary: var(--color-navyblue-light);
+
+    /* Text Colors */
+    --color-text-primary: #1F7A54;
+    --color-text-secondary: var(--color-navyblue-dark);
+    --color-text-dark: #222222;
+    --color-text-light: #666666;
+    --color-text-white: #FFFFFF;
+
+    /* Status Colors */
+    --color-success: #18BE2E;
+
+    /* Fonts */
+    --fontfamily-quicksand: "Quicksand", sans-serif;
+    --fontfamily-roboto: Roboto, sans-serif;
+
+    /* Font Weights */
+    --fontweight-regular: 400;
+    --fontweight-medium: 500;
+    --fontweight-bold: 700;
+
+    /* Font Sizes */
+    --fontsize-heading: 22px;
+    --fontsize-subheading: 18px;
+    --fontsize-subheading-small: 16px;
+    --fontsize-normal: 14px;
+    --fontsize-small: 12px;
+    --fontsize-extrasmall: 10px;
+
+}
+
+* {
+    font-family: var(--fontfamily-quicksand);
+    margin: 0;
+    padding: 0;
+
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+        border-color: var(--color-primary-dark);
+    }
+
+    .mat-radio-button.mat-accent .mat-radio-inner-circle {
+        color: var(--color-primary-dark);
+        background-color: var(--color-primary-dark);
+    }
+
+    .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+        background-color: var(--color-primary);
+    }
+
+    .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        opacity: 0.03 !important;
+        background-color: var(--color-primary-dark);
+    }
+
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: var(--color-primary-dark);
+    }
+}
+
+body {
+    background-color: var(--color-background-body);
+
+}

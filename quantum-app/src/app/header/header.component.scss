@@ -1,0 +1,33 @@
+ mat-toolbar {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 1;
+
+     background-color: var(--color-background-header);
+     height: 57px;
+     width: 100%;
+     border-bottom: 2px solid var(--color-blue);
+
+     .logo-container {
+         display: flex;
+         height: 100%;
+         align-items: center;
+         justify-content: center;
+
+
+     }
+
+     .logo-container:hover {
+         transform: scale(1.03);
+     }
+
+     .account-icon {
+         height: 40px;
+     }
+
+     .header-spacer {
+         flex: 1 1 auto;
+     }
+ }
