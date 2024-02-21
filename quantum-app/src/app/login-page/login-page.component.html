@@ -1,33 +1,44 @@
-<div class="loginform">
-  <h2>Log in</h2>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <div class="profile-input">
-      <input type="text" class="input" name="username" placeholder="Username/Email ID*" ngModel required matInput />
-      <a class="forgot-profile" href="#">FORGOT USERNAME?</a>
+<div style="height: 57px;"></div>
 
-      <input type="password" class="input" placeholder="Password*" name="password" ngModel required matInput />
-      <a class="forgot-profile" href="#">FORGOT PASSWORD?</a>
+<div class="abso">
+  <div class="loginform-container">
+    <div class="title-login">Log in</div>
+    <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+      <div class="profile-input-container">
+        <input type="email" class="input" placeholder="Username/Email ID*" name="userEmail" ngModel required email
+          matInput />
+        <a class="forgot-profile" href="#">FORGOT USERNAME?</a>
+
+        <input type="password" class="input" placeholder="Password*" name="password" ngModel required minlength="4"
+          matInput />
+        <a class="forgot-profile" href="#">FORGOT PASSWORD?</a>
 
 
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" name="isRememberMe" id="cookie-ckbox" ngModel />
+        <label for="cookie-ckbox"> Remember Me</label>
+      </div>
+
+
+      <div class="btn">
+        <button id="submit-btn" color="success" type="submit" [disabled]="!loginform.valid" mat-raised-button>LOG
+          IN</button>
+      </div>
+    </form>
+
+    <div class="create-account">
+      <p>Not registered yet?</p>
+      <a href="#" id="newacc">CREATE AN ACCOUNT</a>
     </div>
-    <div class="checkbox">
-      <input type="checkbox" name="cookie-ckbox" id="cookie-ckbox" ngModel />
-      <label for="cookie-ckbox"> Remember Me</label>
-    </div>
 
+    <!-- <button class="btn btn-default" (click)="onLogin()">Login</button>
+    <button class="btn btn-default" (click)="onLogout()">Logout</button> -->
 
-    <div class="btn">
-      <button id="submit-btn" mat-raised-button>LOG IN</button>
-    </div>
-
-  </form>
-
-  <div class="create-account">
-    <p>Not registered yet?</p>
-    <a href="#" id="newacc">CREATE AN ACCOUNT</a>
   </div>
+  <div class="link-container">
+    <a href="http://" class="links">About</a>
 
-  <button class="btn btn-default" (click)="onLogin()">Login</button>
-  <button class="btn btn-default" (click)="onLogout()">Logout</button>
-
+    <a href="http://" class="links">Contact Us</a>
+  </div>
 </div>

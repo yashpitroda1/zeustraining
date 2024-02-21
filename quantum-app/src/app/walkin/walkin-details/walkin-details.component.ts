@@ -38,6 +38,8 @@ export class WalkinDetailsComponent implements OnInit {
   onTapOnWalkinApplyHandler(dataTemp: { data: string }) {
     console.log(dataTemp);
     console.log("perent - applied");
+    this.router.navigateByUrl('/walkin/successfullyapplied');
+
 
   }
 

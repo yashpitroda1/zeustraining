@@ -53,6 +53,7 @@
     --fontweight-bold: 700;
 
     /* Font Sizes */
+    --fontsize-heading-large: 24px;
     --fontsize-heading: 22px;
     --fontsize-subheading: 18px;
     --fontsize-subheading-small: 16px;
@@ -66,6 +67,11 @@
     font-family: var(--fontfamily-quicksand);
     margin: 0;
     padding: 0;
+
+    .mat-success {
+        background-color: var(--color-buttom-primary);
+        color: var(--color-buttom-secondary);
+    }
 
     .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
         border-color: var(--color-primary-dark);
