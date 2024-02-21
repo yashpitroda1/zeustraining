@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/quantum_apis.props" />
+</Project>
