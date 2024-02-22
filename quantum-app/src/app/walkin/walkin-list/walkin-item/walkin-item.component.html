@@ -1,9 +1,9 @@
 <div class="item-card">
-    <div class="expiring-container" *ngIf="walkinObject.isexpring">
-        <div>{{walkinObject.expiredTitle}}</div>
-    </div>
+    <!-- <div class="expiring-container" *ngIf="walkinObject.isexpring">
+        <div>{{walkinObject.expiredTitle}}</div> -->
+    <!-- </div> -->
     <div class="title-container">
-        <p>{{walkinObject.title}}</p>
+        <p>{{walkinObject.walkinTitle}}</p>
     </div>
     <div class="date-time-location">
         <p class="date-time-title">Date & Time :</p>
@@ -23,15 +23,15 @@
         <!-- block -->
         <p class="jobrole-title">Job Roles :</p>
         <div class="jobrole-grid">
-            <div class="jobrole-card" *ngFor="let jobroleitem of walkinObject.jobRoleList;let i=index;">
+            <div class="jobrole-card" *ngFor="let jobroleitem of walkinObject.walkinJobRole;let i=index;">
                 <img src="/assets/images/{{jobroleitem.roleName}}.svg" alt="">
                 <div class="content">{{jobroleitem.roleName}}</div>
             </div>
         </div>
     </div>
     <div class="note-container">
-        <span class="note" *ngIf="walkinObject.isNote">
-            {{walkinObject.note}}
+        <span class="note" *ngIf="walkinObject.walkinNotes">
+            {{walkinObject.walkinNotes}}
         </span>
     </div>
     <div class="view-more-button">

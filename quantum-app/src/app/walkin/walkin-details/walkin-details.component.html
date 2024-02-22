@@ -6,7 +6,7 @@
 <app-timeslot-preferances-card [walkinObject]="walkinObject"></app-timeslot-preferances-card>
 
 
-<div class="job-role-list-container" *ngFor="let jobRole of walkinObject.jobRoleList;">
+<div class="job-role-list-container" *ngFor="let jobRole of walkinObject.walkinJobRole;">
     <mat-accordion>
         <mat-expansion-panel (opened)="jobRole.istoggle= true" (closed)="jobRole.istoggle = false" hideToggle>
             <mat-expansion-panel-header>

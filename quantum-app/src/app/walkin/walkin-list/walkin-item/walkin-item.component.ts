@@ -21,7 +21,7 @@ export class WalkinItemComponent implements OnInit {
   onTapViewMoreDetails() {
     //do whatever i need
     // queryParamsHandling: 'preserve'
-    this.router.navigate([this.walkinObject.id.toString(), this.walkinObject.title
+    this.router.navigate([this.walkinObject.id.toString(), this.walkinObject.walkinTitle
     ], { relativeTo: this.route, queryParams: { allow: false }, fragment: "loading" });
     // const m = this.router.url + '/' + this.walkinObject.id.toString() + '/' + this.walkinObject.title
     // console.log(m);

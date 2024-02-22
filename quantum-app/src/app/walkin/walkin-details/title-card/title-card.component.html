@@ -1,11 +1,11 @@
 <mat-card>
     <mat-card-content>
         <div class="card-container">
-            <div class="expiring-container" *ngIf="walkinObject.isexpring">
+            <!-- <div class="expiring-container" *ngIf="walkinObject.isexpring">
                 <div>{{walkinObject.expiredTitle}}</div>
-            </div>
+            </div> -->
             <div class="title-container">
-                <div class="title">{{walkinObject.title}}
+                <div class="title">{{walkinObject.walkinTitle}}
                 </div>
                 <button class="apply-button" (click)="onTapOnApply()" mat-raised-button>APPLY</button>
             </div>
@@ -25,15 +25,15 @@
             <div class="job-role-container">
                 <p class="jobrole-title">Job Roles :</p>
                 <div class="jobrole-grid">
-                    <div class="jobrole-card" *ngFor="let jobroleitem of walkinObject.jobRoleList;let i=index;">
+                    <div class="jobrole-card" *ngFor="let jobroleitem of walkinObject.walkinJobRole;let i=index;">
                         <img src="/assets/images/{{jobroleitem.roleName}}.svg" alt="">
                         <div class="content">{{jobroleitem.roleName}}</div>
                     </div>
                 </div>
             </div>
             <div class="note-container">
-                <span class="note" *ngIf="walkinObject.isNote">
-                    {{walkinObject.note}}
+                <span class="note" *ngIf="walkinObject.walkinNotes">
+                    {{walkinObject.walkinNotes}}
                 </span>
             </div>
         </div>
@@ -56,7 +56,7 @@
                     <div class="instruction-container">
                         <div class="title">General Instructions :</div>
                         <div class="info">
-                            <div *ngFor="let item of walkinObject.walkinInstruction.generalInstruction">
+                            <div *ngFor="let item of walkinObject.walkinInstruction.generalInstructions">
                                 - {{item}}
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                     <div class="instruction-container">
                         <div class="title">Instructions for the Exam :</div>
                         <div class="info">
-                            <div *ngFor="let item of walkinObject.walkinInstruction.examInstruction">
+                            <div *ngFor="let item of walkinObject.walkinInstruction.examInstructions">
                                 - {{item}}
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                     <div class="instruction-container">
                         <div class="title">Minimum System Requirements :</div>
                         <div class="info">
-                            <div *ngFor="let item of walkinObject.walkinInstruction.systemRequirement">
+                            <div *ngFor="let item of walkinObject.walkinInstruction.systemRequirements">
                                 - {{item}}
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                         <div class="title">Process :</div>
                         <div class="info">
                             <div class="process-container"
-                                *ngFor="let psitem of walkinObject.walkinInstruction.processDetails?.processInstructionList">
+                                *ngFor="let psitem of walkinObject.walkinInstruction.processDetails.processInstruction">
                                 - {{psitem}}
                             </div>
                             <br>

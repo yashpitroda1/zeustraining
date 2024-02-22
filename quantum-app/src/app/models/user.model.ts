@@ -1,5 +1,10 @@
 export class UserModel {
-    constructor(public id: number, public userEmail: string, private _token: string, private _tokenExpiresAt: Date, public role: string
+    constructor(
+        public id: number,
+        public userEmail: string,
+        private _token: string,
+        private _tokenExpiresAt: Date,
+        public role: string,
     ) { }
 
     get token() {

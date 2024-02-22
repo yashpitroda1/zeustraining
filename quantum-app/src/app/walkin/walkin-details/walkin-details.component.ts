@@ -26,7 +26,7 @@ export class WalkinDetailsComponent implements OnInit {
       .subscribe(
         (params: Params) => {
 
-          this.walkinObject = this.walinService.getwalkinObject(+params['id']) as WalkinModel;
+          this.walkinObject = this.walinService.getwalkinObjectById(+params['id']) as WalkinModel;
 
           if (!this.walkinObject) {
             this.router.navigate(['/']);

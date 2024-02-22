@@ -32,7 +32,9 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { TitleCardComponent } from './walkin/walkin-details/title-card/title-card.component';
 import { TimeslotPreferancesCardComponent } from './walkin/walkin-details/timeslot-preferances-card/timeslot-preferances-card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { WalkinApiService } from './apis/walkin-api.service';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatDividerModule, MatButtonModule, MatIconModule, MatBadgeModule, MatExpansionModule, MatRadioModule, MatCheckboxModule
   ],
-  providers: [WalkinServices, AuthService, AuthGuard,],
+  providers: [
+    WalkinServices, WalkinApiService, AuthService, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

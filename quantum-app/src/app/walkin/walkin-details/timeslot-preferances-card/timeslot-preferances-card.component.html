@@ -11,8 +11,8 @@
                 <div class="content">
                     <div class="radio-container">
                         <mat-radio-group aria-label="Select an option">
-                            <div class="radio-tile" *ngFor="let item of walkinObject.walkinTimeslotList">
-                                <mat-radio-button value="{{item.id}}">{{item.timeSlot}}</mat-radio-button>
+                            <div class="radio-tile" *ngFor="let item of walkinObject.walkinTimeSlot">
+                                <mat-radio-button value="{{item.walkinTimeSlotId}}">{{item.timeSlot}}</mat-radio-button>
                             </div>
                         </mat-radio-group>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="title">Select Your Preference :</div>
                 <div class="content">
                     <div class="checkbox-container">
-                        <div class="checkbox-tile" *ngFor="let i of walkinObject.jobRoleList">
+                        <div class="checkbox-tile" *ngFor="let i of walkinObject.walkinJobRole">
                             <mat-checkbox class="">
                                 {{i.roleName}}
                             </mat-checkbox>

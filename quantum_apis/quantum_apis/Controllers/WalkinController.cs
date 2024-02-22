@@ -19,7 +19,7 @@ using quantum_apis.Models.Walkin;
 namespace quantum_apis.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(Roles = "user")]
+    //[Authorize(Roles = "user")]
     public class WalkinController : ControllerBase
     {
      
