@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -34,15 +34,15 @@ export class LoginPageComponent implements OnInit {
 
         console.log(resData);
         this.isloading = false;
+        form.reset();
         this.router.navigateByUrl(this.authService.redirectUrl);
-
       },
       errorMessage => {
         console.log(errorMessage);
         this.error = errorMessage;
         this.isloading = false;
-      })
-    form.reset();
+      });
+
 
   }
 

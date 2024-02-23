@@ -7,11 +7,11 @@
       <div class="profile-input-container">
         <input type="email" class="input" placeholder="Username/Email ID*" name="userEmail" ngModel required email
           matInput />
-        <a class="forgot-profile" href="#">FORGOT USERNAME?</a>
+        <a class="forgot-profile">FORGOT USERNAME?</a>
 
         <input type="password" class="input" placeholder="Password*" name="password" ngModel required minlength="4"
           matInput />
-        <a class="forgot-profile" href="#">FORGOT PASSWORD?</a>
+        <a class="forgot-profile">FORGOT PASSWORD?</a>
 
 
       </div>
@@ -22,8 +22,11 @@
 
 
       <div class="btn">
-        <button id="submit-btn" color="success" type="submit" [disabled]="!loginform.valid" mat-raised-button>LOG
-          IN</button>
+        <button id="submit-btn" color="success" type="submit" [disabled]="!loginform.valid" mat-raised-button>
+          <div *ngIf="!isloading">LOG
+            IN</div>
+          <mat-spinner *ngIf="isloading" [diameter]="24"></mat-spinner>
+        </button>
       </div>
     </form>
 

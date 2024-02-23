@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TitleCardComponent } from './title-card.component';
+import { ApplyInWalkinComponent } from './apply-in-walkin.component';
 
-describe('TitleCardComponent', () => {
-  let component: TitleCardComponent;
-  let fixture: ComponentFixture<TitleCardComponent>;
+describe('ApplyInWalkinComponent', () => {
+  let component: ApplyInWalkinComponent;
+  let fixture: ComponentFixture<ApplyInWalkinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TitleCardComponent ]
+      declarations: [ ApplyInWalkinComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TitleCardComponent);
+    fixture = TestBed.createComponent(ApplyInWalkinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

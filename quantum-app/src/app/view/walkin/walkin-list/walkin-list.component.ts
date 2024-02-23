@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WalkinModel } from '../../models/walkin.model';
-import { WalkinServices } from '../../services/walkin.services';
+import { WalkinModel } from '../../../models/walkin.model';
+import { WalkinServices } from '../../../services/walkin.services';
 import { Subscription } from 'rxjs';
 import { WalkinApiService } from 'src/app/apis/walkin-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,17 +12,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class WalkinListComponent implements OnInit {
   walkinList: WalkinModel[] = [];
+  isloading: boolean = false;
   walkinListChangedSubscriber: Subscription;
   constructor(private walkinService: WalkinServices, private walkinApiService: WalkinApiService, private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.isloading = true;
     this.walkinApiService.fetchWalkins().subscribe(
       resData => {
+        this.isloading = false;
         console.log("at component");
         console.log(resData);
       },
       errorMessage => {
+        this.isloading = false;
         console.log("errorMessage");
         console.log(errorMessage as string);
 

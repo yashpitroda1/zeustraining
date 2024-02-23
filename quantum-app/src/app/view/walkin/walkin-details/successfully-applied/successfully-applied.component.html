@@ -12,20 +12,20 @@
                     Date & Time of Walk-In :
                 </div>
                 <div class="date">
-                    03rd July 2021
+                    <!-- pending -reqvied to add in table -->
+                    03rd July 2024
                 </div>
-                <div class="time">9:00 AM to 11:00 AM</div>
+                <div class="time">{{selectedTimeSlot}}</div>
             </div>
             <mat-divider [inset]="true"></mat-divider>
             <div class="vanue-container">
                 <div class="title">Venue of Walk-In :</div>
                 <div class="info">
-                    <div>Zeus Systems Pvt. Ltd.</div>
-                    <div>1402, 14th Floor, Tower B, Peninsula Business Park. Ganpatrao Kadam
-                        Marg</div>
-                    <div>Lower Parel (W)</div>
-                    <div>Mumbai - 400 013</div>
-                    <div>Phone: +91-22-66600000</div>
+                    <div>{{walkinObject.walkinAddress.companyName}}</div>
+                    <div>{{walkinObject.walkinAddress.address}}</div>
+                    <div>{{walkinObject.walkinAddress.landmark}}</div>
+                    <div>{{walkinObject.walkinAddress.city}} -{{walkinObject.walkinAddress.pinCode}}</div>
+                    <div>Phone: {{walkinObject.walkinAddress.phone}}</div>
 
                 </div>
             </div>
@@ -33,9 +33,10 @@
             <div class="thingstoremember-container">
                 <div class="title">THINGS TO REMEMBER :</div>
                 <div class="info">
-                    <div>- Please report 30 MINUTES prior to your reporting time.</div>
-                    <div>- Download your Hall Ticket from below and carry it with you
-                        during your Walk-In.</div>
+
+                    <div *ngFor="let ThingsToRememberItem of walkinObject.walkinThingsToRemember">
+                        <div>{{ThingsToRememberItem}}</div>
+                    </div>
                 </div>
             </div>
             <mat-divider [inset]="true"></mat-divider>

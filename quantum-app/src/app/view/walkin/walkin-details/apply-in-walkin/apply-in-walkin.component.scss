@@ -1,0 +1,469 @@
+#jobrole-checkbox {
+    accent-color: var(--color-primary-dark);
+}
+
+.title-card {
+    mat-card {
+        margin-left: 24px;
+        margin-right: 24px;
+        // padding-top: 16px;
+
+        padding: 0px;
+        padding-top: 16px;
+
+
+        mat-card-content {
+            .card-container {
+                margin: 0px 16px;
+
+                position: relative;
+
+                .expiring-container {
+                    position: absolute;
+                    top: -18px;
+                    right: 0%;
+                    transform: translateY(-50%);
+                    background-color: var(--color-red-light);
+                    padding: 2px 8px;
+
+                    div {
+                        font-size: var(--fontsize-small);
+                        color: var(--color-red-dark);
+                        font-weight: var(--fontweight-medium);
+                    }
+                }
+
+                .title-container {
+                    margin-bottom: 16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .title {
+                        font-size: var(--fontsize-heading);
+                        color: var(--color-text-dark);
+                        font-weight: var(--fontweight-medium);
+                    }
+
+                    // .apply-button {
+                    //     display: flex;
+                    //     align-items: center;
+                    //     // background-color: var(--color-buttom-primary);
+                    //     // color: var(--color-navyblue-dark);
+                    //     height: 28px;
+                    // }
+                }
+
+                .date-time-location {
+                    display: block;
+
+                    .date-time-title {
+                        font-size: var(--fontsize-small);
+                        color: var(--color-text-light);
+                        font-weight: var(--fontweight-medium);
+                        margin-bottom: 8px;
+                    }
+
+                    .date-time-location-container {
+                        margin-bottom: 16px;
+
+                        .date-time-content {
+                            font-size: var(--fontsize-normal);
+                            color: var(--color-text-dark);
+                            font-weight: var(--fontweight-medium);
+                            margin-right: 16px;
+                        }
+
+                        .location-container {
+                            margin-left: 16px;
+
+                            .icon-container {
+                                .location-icon {
+                                    width: 13px;
+                                    height: 13.33px;
+                                    filter: var(--filter-svgicon-gray);
+
+                                }
+                            }
+
+                            .location-content {
+                                margin-left: 7.33px;
+                                font-size: var(--fontsize-small);
+                                color: var(--color-text-light);
+                                font-weight: var(--fontweight-medium);
+                            }
+                        }
+                    }
+                }
+
+                .job-role-container {
+                    margin-top: 16px;
+
+                    .jobrole-title {
+                        font-size: var(--fontsize-small);
+                        color: var(--color-text-light);
+                        font-weight: var(--fontweight-medium);
+                        margin-bottom: 11px;
+                    }
+
+                    .jobrole-grid {
+                        display: flex;
+                        flex-direction: row;
+
+                        .jobrole-card {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                padding: 3px;
+                                border: 1px solid var(--color-gray-dark);
+                                border-radius: 50%;
+                                margin-right: 8px;
+                            }
+
+                            .content {
+                                font-size: var(--fontsize-normal);
+                                color: var(--color-text-primary);
+                                font-weight: var(--fontweight-medium);
+                                margin-right: 21px;
+                            }
+                        }
+                    }
+                }
+
+                .note-container {
+                    margin-top: 16px;
+                    margin-bottom: 20px;
+
+                    .note {
+                        display: inline;
+                        background-color: #EEDD6B;
+                        padding-top: 3px;
+                        padding-bottom: 2px;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        border-radius: 10px;
+                        font-size: var(--fontsize-extrasmall);
+                        color: var(--color-text-dark);
+                        font-weight: var(--fontweight-medium);
+
+                    }
+                }
+            }
+
+            mat-expansion-panel {
+                border-radius: 0px;
+
+                mat-expansion-panel-header {
+                    padding: 0px;
+                    padding-left: 16px;
+                    background-color: var(--color-blue-light);
+                    height: 40px;
+
+                    mat-panel-title {
+                        font-size: var(--fontsize-subheading-small);
+                        color: var(--color-text-dark);
+                        font-weight: var(--fontweight-medium);
+                        align-items: center;
+                    }
+
+                    mat-panel-description {
+                        justify-content: end;
+                        align-items: center;
+
+                        .flip-arrow-icon {
+                            transform: rotate(-180deg);
+                            // border-right: 1px solid var(--color-gray-dark);
+
+                        }
+
+                        .unflip-arrow-icon {
+                            transform: rotate(0deg);
+                            // border-left: 1px solid var(--color-gray-dark);
+                        }
+
+
+                        img {
+
+                            filter: var(--filter-svgicon-primary);
+                        }
+
+
+                    }
+                }
+
+                mat-expansion-panel-header:hover {
+                    background-color: var(--color-blue-light);
+                }
+
+                .pre-requisites-content {
+
+                    .instruction-container {
+                        margin-top: 16px;
+                        margin-bottom: 16px;
+
+                        .title {
+                            font-size: var(--fontsize-small);
+                            color: var(--color-text-light);
+                            font-weight: var(--fontweight-medium);
+                            margin-bottom: 16px;
+                        }
+
+                        .info {
+                            text-align: start;
+                            font-size: var(--fontsize-normal);
+                            color: var(--color-text-dark);
+                            font-weight: var(--fontweight-medium);
+                        }
+                    }
+
+                    .process-round-container {
+                        margin-top: 16px;
+                        margin-bottom: 0px;
+
+                        .title {
+                            font-size: var(--fontsize-small);
+                            color: var(--color-text-light);
+                            font-weight: var(--fontweight-medium);
+                            margin-bottom: 16px;
+                        }
+
+                        .info {
+                            text-align: start;
+                            font-size: var(--fontsize-normal);
+                            color: var(--color-text-dark);
+                            font-weight: var(--fontweight-medium);
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.timeslot-preferances-card {
+    mat-card {
+
+        margin: 0px 24px;
+        margin-top: 16px;
+
+        mat-card-content {
+            .timeslot-perferances-content {
+
+                .title-container {
+                    font-size: var(--fontsize-subheading-small);
+                    color: var(--color-text-dark);
+                    font-weight: var(--fontweight-medium);
+                    margin-bottom: 24px;
+                }
+
+                .select-time-container {
+                    .title {
+                        font-size: var(--fontsize-small);
+                        color: var(--color-text-light);
+                        font-weight: var(--fontweight-medium);
+                        margin-bottom: 16px;
+                    }
+
+                    .content {
+                        text-align: start;
+                        font-size: var(--fontsize-subheading-small);
+                        color: var(--color-text-dark);
+                        font-weight: var(--fontweight-medium);
+
+                        .radio-container {
+                            .radio-tile {
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .select-jobrole-container {
+                    margin-top: 16px;
+
+                    .title {
+                        font-size: var(--fontsize-small);
+                        color: var(--color-text-light);
+                        font-weight: var(--fontweight-medium);
+                        margin-bottom: 18px;
+                    }
+
+                    .content {
+                        text-align: start;
+                        font-size: var(--fontsize-subheading-small);
+                        color: var(--color-text-dark);
+                        font-weight: var(--fontweight-medium);
+
+                        .checkbox-container {
+                            .checkbox-tile {
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .upload-resume-container {
+                    margin-top: 19px;
+                    font-size: var(--fontsize-normal);
+                    color: var(--color-text-primary);
+                    font-weight: var(--fontweight-medium);
+
+                    button {
+                        padding: 0px;
+
+                        div {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        img {
+                            margin-right: 8px;
+                            filter: var(--filter-svgicon-primary);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.apply-bottom-button {
+    display: none;
+    // when max-width: 480px then block
+}
+
+.job-role-list-container {
+    margin: 16px 24px;
+
+
+    mat-expansion-panel {
+        mat-expansion-panel-header:hover {
+            background-color: var(--color-blue-light);
+        }
+
+        mat-expansion-panel-header {
+            padding: 0px;
+            padding-left: 16px;
+            background-color: var(--color-blue-light);
+            height: 56px;
+
+            mat-panel-title {
+                font-size: var(--fontsize-subheading-small);
+                color: var(--color-text-dark);
+                font-weight: var(--fontweight-medium);
+                align-items: center;
+            }
+
+            mat-panel-description {
+                justify-content: end;
+                align-items: center;
+
+                .flip-arrow-icon {
+                    transform: rotate(-180deg);
+                    // border-right: 1px solid var(--color-gray-dark);
+
+                }
+
+                .unflip-arrow-icon {
+                    transform: rotate(0deg);
+                    // border-left: 1px solid var(--color-gray-dark);
+                }
+
+                img {
+
+                    filter: var(--filter-svgicon-primary);
+                }
+            }
+        }
+
+        .jobrole-content {
+            .mb16 {
+                margin-bottom: 16px;
+            }
+
+            .instruction-container {
+                margin-top: 16px;
+
+                .title {
+                    font-size: var(--fontsize-small);
+                    color: var(--color-text-light);
+                    font-weight: var(--fontweight-medium);
+                    margin-bottom: 16px;
+                }
+
+                .info {
+                    text-align: start;
+                    font-size: var(--fontsize-normal);
+                    color: var(--color-text-dark);
+                    font-weight: var(--fontweight-medium);
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .title-card {
+        mat-card {
+            mat-card-content {
+                .card-container {
+                    .job-role-container {
+                        .jobrole-grid {
+                            display: flex;
+                            flex-direction: column;
+
+                            .jobrole-card {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 11px;
+                            }
+                        }
+                    }
+
+                    .note-container {
+                        margin-top: 0px;
+
+
+
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .title-card {
+        mat-card {
+            mat-card-content {
+                .card-container {
+                    .title-container {
+                        .apply-button {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .apply-bottom-button {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        right: 0%;
+        left: 0%;
+        background-color: var(--color-buttom-primary);
+        color: var(--color-navyblue-dark);
+    }
+
+}

@@ -1,0 +1,15 @@
+<div *ngIf="isloading" style="
+height: 100vh;
+display: flex;align-items: center;justify-content: center;">
+    <mat-spinner [diameter]="48"></mat-spinner>
+    <!-- <mat-progress-bar mode="query"></mat-progress-bar> -->
+</div>
+<div class="content" *ngIf="!isloading">
+    <div class="grid-box" *ngFor="let item of walkinList;"><mat-card>
+            <mat-card-content>
+                <app-walkin-item [id]="item.id" [walkinObject]="item"> </app-walkin-item>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { WalkinModel } from 'src/app/models/walkin.model';
@@ -13,6 +14,7 @@ export class WalkinDetailsComponent implements OnInit {
   walkinObject: WalkinModel;
   panelOpenState: boolean = false;
 
+
   constructor
     (
       private walinService: WalkinServices,
@@ -22,26 +24,18 @@ export class WalkinDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-
-          this.walkinObject = this.walinService.getwalkinObjectById(+params['id']) as WalkinModel;
-
-          if (!this.walkinObject) {
-            this.router.navigate(['/']);
-          }
-        }
-      );
+    // this.route.params
+    //   .subscribe(
+    //     (params: Params) => {
+    //       this.walkinObject = this.walinService.getwalkinObjectById(+params['id']) as WalkinModel;
+    //       if (!this.walkinObject) {
+    //         this.router.navigate(['/']);
+    //       }
+    //     }
+    //   );
   }
 
-  onTapOnWalkinApplyHandler(dataTemp: { data: string }) {
-    console.log(dataTemp);
-    console.log("perent - applied");
-    this.router.navigateByUrl('/walkin/successfullyapplied');
 
-
-  }
 
 
 }

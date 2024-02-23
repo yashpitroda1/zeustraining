@@ -1,36 +1,47 @@
 ﻿<Properties StartupConfiguration="{88E65CA2-C210-45BD-90B9-2018AA69DF10}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.quantum__apis PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="quantum_apis/Controllers/TestController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="quantum_apis/Controllers/AuthController.cs">
     <Files>
       <File FileName="quantum_apis/Program.cs" Line="60" Column="11" />
-      <File FileName="quantum_apis/Controllers/LoginController.cs" Line="89" Column="45" />
-      <File FileName="quantum_apis/models/loginResDTO.cs" Line="8" Column="42" />
-      <File FileName="quantum_apis/models/loginReqDTO.cs" Line="12" Column="18" />
-      <File FileName="quantum_apis/Controllers/WeatherForecastController.cs" Line="10" Column="12" />
-      <File FileName="quantum_apis/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="quantum_apis/appsettings.json" Line="11" Column="13" />
-      <File FileName="quantum_apis/Controllers/TestController.cs" Line="46" Column="26" />
+      <File FileName="quantum_apis/Controllers/LoginController.cs" Line="98" Column="14" />
+      <File FileName="quantum_apis/models/loginResDTO.cs" Line="10" Column="41" />
+      <File FileName="quantum_apis/models/loginReqDTO.cs" Line="14" Column="41" />
+      <File FileName="quantum_apis/Controllers/WeatherForecastController.cs" Line="8" Column="31" />
+      <File FileName="quantum_apis/Properties/launchSettings.json" />
+      <File FileName="quantum_apis/appsettings.json" />
+      <File FileName="quantum_apis/Controllers/TestController.cs" Line="44" Column="49" />
+      <File FileName="quantum_apis/Controllers/WalkinController.cs" Line="197" Column="28" />
+      <File FileName="quantum_apis/Services/walkinService.cs" Line="13" Column="1" />
+      <File FileName="quantum_apis/Models/Walkin/WalkinInstructionModel.cs" Line="18" Column="6" />
+      <File FileName="quantum_apis/Models/Walkin/WalkinTimeSlotModel.cs" Line="4" Column="34" />
+      <File FileName="quantum_apis/Models/Walkin/WalkinJobRoleModel.cs" Line="15" Column="1" />
+      <File FileName="quantum_apis/Models/Walkin/WalkinModel.cs" Line="31" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="quantum_apis" expanded="True" selected="True">
-            <Node name="quantum_apis">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Properties" expanded="True" />
+          <Node name="quantum_apis">
+            <Node name="quantum_apis" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="AuthController.cs" selected="True" />
+              </Node>
+              <Node name="Dtos" expanded="True">
+                <Node name="auth" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Walkin" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.quantum__apis PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

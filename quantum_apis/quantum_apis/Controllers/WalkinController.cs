@@ -19,10 +19,12 @@ using quantum_apis.Models.Walkin;
 namespace quantum_apis.Controllers
 {
     [Route("api/[controller]")]
-    //[Authorize(Roles = "user")]
+    // [Authorize(Roles = "admin")]
+    // [Authorize(Roles = "user")]
+
     public class WalkinController : ControllerBase
     {
-     
+
         private readonly IConfiguration _configuration;
         public WalkinController(IConfiguration configuration)
         {
@@ -34,12 +36,12 @@ namespace quantum_apis.Controllers
         public async Task<ActionResult> walkinDataList()
         {
             List<WalkinModel> walkinDataList = new List<WalkinModel>();
-           
+
             using var connection = new MySqlConnection(_configuration.GetConnectionString("Default"));
             await connection.OpenAsync();
             using var command = new MySqlCommand("SELECT wd.id,wd.walkinTitle,wd.walkinNotes,wd.walkinStartingDate,wd.walkinEndingDate,wd.walkinAddress,wd.walkinCity,wd.walkinThingsToRemember,wi.generalInstructions,wi.examInstructions,wi.systemRequirements,wi.processDetails, wjr.id AS walkinJobRoleId,ejr.id AS enumJobRoleId,ejr.roleName,ejr.grossCompensationPackage,ejr.roleDescription,ejr.requirements,wts.id AS walkinTimeSlotId,wts.timeSlot FROM walkin_data wd JOIN walkin_instruction wi ON wd.id = wi.walkinId JOIN walkin_jobRole wjr ON wd.id = wjr.walkinId JOIN enum_job_role ejr ON wjr.jobRoleId = ejr.id JOIN walkin_timeslot wts ON wts.walkInId = wd.id ORDER BY wd.id", connection);
             using var reader = await command.ExecuteReaderAsync();
-            
+
             if (reader.HasRows)
             {
                 while (await reader.ReadAsync())
@@ -65,8 +67,8 @@ namespace quantum_apis.Controllers
 
                         var walkinInstructionObj = new WalkinInstructionModel()
                         {
-                           
-                          
+
+
                             examInstructions = examInstructionsDict["examInstructions"],
                             generalInstructions = generalInstructionsDict["generalInstructions"],
                             processDetails = recruitmentProcessModelobj,
@@ -138,7 +140,7 @@ namespace quantum_apis.Controllers
 
                             // Get the RecruitmentProcessModel object
                             RecruitmentProcessModel recruitmentProcessModelobj = RecruitmentProcessModelWrapperObj.process;
-                           
+
                             var walkinInstructionObj = new WalkinInstructionModel()
                             {
 
@@ -196,17 +198,17 @@ namespace quantum_apis.Controllers
                             //walkinobj is there
                             var indexOfWalkIn = walkinDataList.FindIndex(m => m.id == listFountedWalkinObj.id);
                             int listsize = listFountedWalkinObj.walkinJobRole.Count;
-                            
+
                             int i = 0;
                             for (; i < listsize; i++)
                             {
                                 if ((Convert.ToInt32(reader["walkinJobRoleId"]) == listFountedWalkinObj.walkinJobRole[i].walkinJobRoleId && listFountedWalkinObj.walkinJobRole[i].enumJobRoleId == Convert.ToInt32(reader["enumJobRoleId"])))
                                 {
-                                    
+
 
                                     break;
                                 }
-                                
+
 
                             }
                             if (i == listsize)
@@ -226,16 +228,16 @@ namespace quantum_apis.Controllers
 
                                 };
                                 walkinDataList[indexOfWalkIn].walkinJobRole.Add(jobRoleObj_);
-                              
+
 
                             }
                             listsize = listFountedWalkinObj.walkinTimeSlot.Count;
-                             i = 0;
+                            i = 0;
                             for (; i < listsize; i++)
                             {
-                                if (Convert.ToInt32(reader["walkinTimeSlotId"]) == listFountedWalkinObj.walkinTimeSlot[i].walkinTimeSlotId )
+                                if (Convert.ToInt32(reader["walkinTimeSlotId"]) == listFountedWalkinObj.walkinTimeSlot[i].walkinTimeSlotId)
                                 {
-                                    
+
                                     break;
                                 }
 
@@ -250,17 +252,17 @@ namespace quantum_apis.Controllers
                                     timeSlot = reader["timeSlot"].ToString(),
                                 };
                                 walkinDataList[indexOfWalkIn].walkinTimeSlot.Add(timeSlotbj);
-                                
+
                             }
 
-                           
-                           
+
+
 
 
                         }
 
                     }
-                  
+
                     //walkinObj.walkinJobRole.Add(jobRoleObj);
                     //Console.WriteLine(walkinObj.walkinInstruction.processDetails["rounds"]);
 

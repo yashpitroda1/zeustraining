@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { NavigationStart, Router } from "@angular/router";
 import { BehaviorSubject, Subject, catchError, tap, throwError } from "rxjs";
 import { UserModel } from "../models/user.model";
+import { UtilityHelper } from "../helper/utility.helper";
 export interface authResData {
     id: string,
     userEmail: string,
@@ -60,17 +61,13 @@ export class AuthService {
 
 
     login(userEmail: string, password: string, isRememberMe: boolean, role: string) {
-        let headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            // 'Authorization': this.basic
-        });
-        let options = { headers: headers };
-        return this.http.post<authResData>("https://localhost:7074/Auth/Login", {
+
+        return this.http.post<authResData>(UtilityHelper.baseUrl + "Auth/Login", {
             userEmail: userEmail,
             password: password,
             isRememberMe: isRememberMe,
             role: role
-        }, options).pipe(
+        }, UtilityHelper.httpOptions).pipe(
             catchError(this.handleError),
             tap(resData => {
                 // this.router.navigate(['/']); //handle at login page ts

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WalkinModel } from '../models/walkin.model';
-import { WalkinServices } from '../services/walkin.services';
-import { AuthService } from '../services/auth.service';
+import { WalkinModel } from '../../models/walkin.model';
+import { WalkinServices } from '../../services/walkin.services';
+import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

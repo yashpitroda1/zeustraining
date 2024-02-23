@@ -68,6 +68,11 @@
     margin: 0;
     padding: 0;
 
+    .mat-progress-spinner circle,
+    .mat-spinner circle {
+        stroke: var(--color-navyblue-light);
+    }
+
     .mat-success {
         background-color: var(--color-buttom-primary);
         color: var(--color-buttom-secondary);

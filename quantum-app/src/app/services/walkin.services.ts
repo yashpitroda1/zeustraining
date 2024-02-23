@@ -31,4 +31,12 @@ export class WalkinServices {
         this._walkinList = walkinList;
         this.walkinListChangedEventEmitter.next(this._walkinList.slice());
     }
+    getTimeSoltObjInwalkinObject(walkinObj: WalkinModel, walkinJobRoleId: number) {
+        const timeslot = walkinObj.walkinTimeSlot.find(
+            (item) => {
+                return item.walkinTimeSlotId === walkinJobRoleId;
+            }
+        );
+        return timeslot;
+    }
 }
