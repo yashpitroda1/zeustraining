@@ -1,0 +1,821 @@
+<div class="register-container">
+    <form [formGroup]="userRegister" (ngSubmit)="handlesubmit()">
+        <div class="toolbar-container">
+            <div class="img-container">
+                <img src="../../assets/images/arrow_upward_black_24dp.svg" alt="">
+            </div>
+            <div class="content">Create An Account</div>
+            <div class="toolbar-buttons-container">
+                <button mat-raised-button class="cancel-button" type="button" color="success">CANCEL</button>
+                <p style="width: 16px; display: inline;"></p>
+                <button mat-raised-button type="submit" color="success" class="create-button"
+                    [disabled]="!onlastpage">CREATE</button>
+            </div>
+        </div>
+
+
+
+        <mat-stepper id="stepper" #stepper linear>
+
+            <mat-step [stepControl]="personalInfoForm" class="firstpage">
+                <div formGroupName="personalinfo" class="personalinfo">
+                    <ng-template matStepLabel>
+                        <p id="step-header-title">Personal Information</p>
+                    </ng-template>
+                    <div class="speacer-bw-stepper-content"></div>
+                    <div class="personalinfo-container">
+                        <div class="inputcontent">
+                            <mat-form-field>
+                                <mat-label>First Name</mat-label>
+                                <input matInput formControlName="firstName" placeholder="First name" class="input-box"
+                                    required>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Last Name</mat-label>
+                                <input matInput formControlName="lastName" placeholder="Last name" class="input-box"
+                                    required>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email" placeholder="example@email.com"
+                                    class="input-box" required>
+                            </mat-form-field>
+
+                            <mat-form-field id="moble-no-input">
+                                <mat-label>Phone Number</mat-label>
+
+                                <input matInput formControlName="phonenumber" placeholder="+91" class="input-box"
+                                    required>
+
+                            </mat-form-field>
+
+                            <div class="resume">
+                                <button mat-flat-button type="button"> <img
+                                        src="../../assets/images/arrow_upward_black_24dp.svg" alt="">UPLOAD
+                                    RESUME</button>
+                            </div>
+
+
+                            <mat-form-field>
+                                <mat-label>Enter Portfolio URL (if any)</mat-label>
+                                <input matInput formControlName="portfoliolink" placeholder="www.myportfolio.in"
+                                    class="input-box">
+                            </mat-form-field>
+
+
+                            <!-- <div class="checkbox-container" formGroupName="jobroleList">
+                                                <div class="checkbox-tile" *ngFor="let i of walkinObject.walkinJobRole;">
+                                                    <input id="jobrole-checkbox" type="checkbox" class=""
+                                                        name="{{i.walkinJobRoleId}}"
+                                                        (change)="onPreferedRoleChange(i.walkinJobRoleId,$event )">
+                        
+                                                    <span>
+                                                        {{ i.roleName }}
+                                                    </span>
+                                                </div>
+                        
+                                                </div> -->
+
+                            <section class="pjroles" formGroupName="preferredjobroles">
+                                <div class="ck-label">Preferred Job Roles*</div>
+                                <section *ngFor="let job of jobrolesarray; let i=index" class="ckbox-field">
+                                    <input type="checkbox" name="{{job.id}}"
+                                        (change)="onPreferedRoleChange(job.id, $event)" id="id{{i}}"
+                                        class="ckbox-button">
+                                    <label class="ckbox-content" for="id{{i}}">{{job.role}}</label>
+                                </section>
+
+                            </section>
+
+
+
+                            <div class="referrer">
+                                <div>If you are Registering via a referral, Please Mention full name of the Employee Who
+                                    Referred You </div>
+                                <mat-form-field style="display: block;">
+                                    <input matInput formControlName="referrer" style="width: 100%;">
+                                </mat-form-field>
+                            </div>
+
+                            <section class="ckbox-field">
+                                <input type="checkbox" id="ckbox-other" formControlName="emailconsent"
+                                    class="ckbox-button">
+                                <label for="ckbox-other" class="ckbox-content">Send me job related updates via
+                                    mail</label>
+                            </section>
+
+                        </div>
+                        <div style="background-color: pink;display: inline;height: 400px;width: 150px;"></div>
+                    </div>
+
+
+                </div>
+                <div class="speacer-bw-stepper-content"></div>
+                <div class="buttons">
+                    <button mat-button matStepperNext type="button" (click)="step1submitted()"
+                        [disabled]="!userRegister.controls.personalinfo.valid" color="success">NEXT</button>
+                </div>
+
+            </mat-step>
+
+            <mat-step [stepControl]="qualificationInfoForm">
+                <div formGroupName="qualification">
+
+                    <ng-template matStepLabel>
+                        <p id="step-header-title"> Qualifications</p>
+                    </ng-template>
+
+
+
+                    <div class="speacer-bw-stepper-content"></div>
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="iseducationalExpand= true" (closed)="iseducationalExpand = false"
+                            hideToggle>
+                            <!-- <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <h3>Educational Qualifications</h3>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header> -->
+
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Educational Qualifications
+                                </mat-panel-title>
+                                <mat-panel-description>
+
+                                    <img *ngIf="!iseducationalExpand" src="/assets/images/expand_less_black_24dp.svg"
+                                        class="flip-arrow-icon" alt="">
+                                    <img *ngIf="iseducationalExpand" src="/assets/images/expand_less_black_24dp.svg"
+                                        class="unflip-arrow-icon" alt="">
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="educational">
+                                <div class="flexible">
+                                    <div style="height: 24px;"></div>
+                                    <mat-form-field class="percentage">
+                                        <mat-label>Aggregated Percentage</mat-label>
+                                        <input matInput type="text" formControlName="AggPercentage" placeholder="80"
+                                            class="input-box" required>
+                                    </mat-form-field>
+                                    <mat-form-field class="yearpassing">
+                                        <mat-label>Year of Passing</mat-label>
+                                        <mat-select formControlName="yearpassing" class="year" class="input-box">
+                                            <mat-option *ngFor="let year of years" [value]="year">
+                                                {{ year }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="degreedetails">
+
+                                    <mat-form-field>
+                                        <mat-label>Qualification</mat-label>
+                                        <mat-select formControlName="selecteddegree" class="degree" class="input-box">
+                                            <mat-option *ngFor="let degree of degrees" [value]="degree">
+                                                <p>{{ degree }}</p>
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+
+                                    <mat-form-field>
+                                        <mat-label>Stream</mat-label>
+                                        <mat-select formControlName="selectedstream" class="stream" class="input-box">
+                                            <mat-option *ngFor="let stream of streams" [value]="stream">
+                                                <p> {{ stream }}</p>
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+
+                                    <mat-form-field>
+                                        <mat-label>College</mat-label>
+                                        <mat-select formControlName="selectedcollege" class="college" class="input-box">
+                                            <mat-option *ngFor="let college of colleges" [value]="college">
+                                                <p>{{ college }}</p>
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+
+                                    <mat-form-field>
+                                        <mat-label>If Others, Please Enter Your College Name</mat-label>
+                                        <input matInput formControlName="collegenameinput" placeholder="LDCE"
+                                            class="input-box">
+
+                                    </mat-form-field>
+
+
+                                </div>
+
+                                <mat-form-field class="input">
+                                    <mat-label>Where is Your College Located</mat-label>
+                                    <input matInput formControlName="collegelocationinput" placeholder="Ahmedabad"
+                                        class="input-box" required>
+
+                                </mat-form-field>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <div class="speacer-bw-stepper-content"></div>
+                    <mat-accordion>
+
+                        <mat-expansion-panel (opened)="isprofessionalExpand= true"
+                            (closed)="isprofessionalExpand = false" hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Professional Qualifications
+                                </mat-panel-title>
+                                <mat-panel-description>
+
+                                    <img *ngIf="!isprofessionalExpand" src="/assets/images/expand_less_black_24dp.svg"
+                                        class="flip-arrow-icon" alt="">
+                                    <img *ngIf="isprofessionalExpand" src="/assets/images/expand_less_black_24dp.svg"
+                                        class="unflip-arrow-icon" alt="">
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="professional">
+                                <div class="h24"></div>
+                                <div class="ck-label">Applicant Type*</div>
+                                <mat-radio-group aria-label="Select an option" formControlName="usertype">
+                                    <mat-radio-button value="1" (change)="onRadioChange($event)">
+                                        <div class="radiobox-content">Fresher</div>
+                                    </mat-radio-button>
+                                    <mat-radio-button value="2" (change)="onRadioChange($event)">
+                                        <div class="radiobox-content">Experienced</div>
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div class="h24"></div>
+                                <div class="speacer-bw-expandble-content"></div>
+
+                                <!-- <div *ngIf="value === '0'">
+                        
+                                                            </div> -->
+
+                                <div *ngIf="value === '1'" class="fresher" formGroupName="fresherdetails">
+                                    <section class="familiartech-fresher" formGroupName="FreFamTech">
+                                        <div class="h24"></div>
+                                        <div class="ck-label">Select All Technologies You Are Familiar In*
+                                        </div>
+                                        <section *ngFor="let tech of technologiesarray; let i=index"
+                                            class="ckbox-field">
+                                            <input type="checkbox" name="{{tech.id}}"
+                                                (change)="OnFresherFamiliarTechChange(tech.id, $event)" id="id{{i}}"
+                                                class="ckbox-button">
+                                            <label for="id{{i}}" class="ckbox-content">{{tech.technology}}</label>
+                                        </section>
+
+                                    </section>
+
+                                    <mat-form-field class="halfwidth">
+                                        <mat-label>If Others, Please Mention</mat-label>
+                                        <input matInput formControlName="FreOtherTech" placeholder="C#"
+                                            class="input-box">
+
+                                    </mat-form-field>
+
+                                    <div class="ck-label">Have You Appeared For Any Test By Zeus In The Last 12 Months?*
+                                    </div>
+                                    <mat-radio-group aria-label="Select an option" formControlName="fhasappearedbefore">
+                                        <mat-radio-button value="1">
+                                            <div class="radiobox-content">Yes</div>
+                                        </mat-radio-button>
+                                        <mat-radio-button value="0">
+                                            <div class="radiobox-content">No</div>
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                    <div class="h16"></div>
+                                    <mat-form-field class="halfwidth">
+                                        <mat-label>If Yes, Which role did you apply for?</mat-label>
+                                        <input matInput formControlName="froleappliedbefore"
+                                            placeholder="Quality Engineer">
+
+                                    </mat-form-field>
+
+
+                                </div>
+
+                                <div *ngIf="value === '2'" class="experienced" formGroupName="experienceddetails">
+                                    <div class="h24"></div>
+                                    <mat-form-field class="fixedsmallwidth">
+                                        <mat-label>Years of Experience</mat-label>
+                                        <input matInput formControlName="yearsofexperience" placeholder="3" required
+                                            class="input-box">
+                                    </mat-form-field>
+
+                                    <mat-form-field class="fixedsmallwidth">
+                                        <mat-label>Current CTC</mat-label>
+                                        <input matInput formControlName="currentctc" placeholder="500000" required
+                                            class="input-box">
+                                    </mat-form-field>
+
+                                    <mat-form-field class="fixedsmallwidth">
+                                        <mat-label>Expected CTC</mat-label>
+                                        <input matInput formControlName="expectedctc" placeholder="650000" required
+                                            class="input-box">
+                                    </mat-form-field>
+
+                                    <!-- <section class="expertisetech-experienced">
+                                                                    <p class="expertisetech">Select All Technologies You Expertise In*</p>               
+                                                                    <mat-checkbox *ngFor="let tech of technologiesarray; let i=index"
+                                                                                  formControlName="eexptech{{i+1}}">
+                                                                                  <p>{{tech.technology}}</p>
+                                                                    </mat-checkbox>
+                                                                    <mat-checkbox formControlName="eexpotherckbox"> 
+                                                                        <p>Other</p>
+                                                                    </mat-checkbox>
+                                                                </section> -->
+                                    <div class="h24"></div>
+                                    <section class="expertisetech-experienced" formGroupName="ExpExpertiseTech">
+                                        <div class="ck-label">Select All Technologies You Are Expertise In*</div>
+                                        <section *ngFor="let tech of technologiesarray; let i=index"
+                                            class="ckbox-field">
+                                            <input type="checkbox" name="{{tech.id}}"
+                                                (change)="OnExperiencedExpertiseTechChange(tech.id, $event)"
+                                                id="id{{i}}" class="ckbox-button">
+                                            <label for="id{{i}}" class="ckbox-content">{{tech.technology}} </label>
+                                        </section>
+
+                                    </section>
+
+
+
+                                    <mat-form-field class="halfwidth">
+                                        <mat-label>If Others, Please Mention</mat-label>
+                                        <input matInput formControlName="ExpOtherExpertiseTech" placeholder="C#"
+                                            class="input-box">
+
+                                    </mat-form-field>
+
+                                    <!-- <section class="familiartech-experienced">
+                                                                    <p class="familiartech">Select All Technologies You Are Familiar In*</p>               
+                                                                    <mat-checkbox *ngFor="let tech of technologiesarray; let i=index"
+                                                                                  formControlName="efamtech{{i+1}}">
+                                                                                  <p>{{tech.technology}}</p>
+                                                                    </mat-checkbox>
+                                                                    <mat-checkbox formControlName="efamotherckbox"> 
+                                                                        <p>Other</p>
+                                                                    </mat-checkbox>
+                                                                </section> -->
+
+                                    <div class="h24"></div>
+                                    <section class="familiartech-experienced" formGroupName="ExpFamiliarTech">
+                                        <div class="ck-label">Select All Technologies You Are Familiar In*
+                                        </div>
+                                        <section *ngFor="let tech of technologiesarray; let i=index"
+                                            class="ckbox-field">
+                                            <input type="checkbox" name="{{tech.id}}"
+                                                (change)="OnExperiencedFamiliarTechChange(tech.id, $event)" id="id{{i}}"
+                                                class="ckbox-button">
+                                            <label class="ckbox-content" for="id{{i}}">{{tech.technology}}</label>
+                                        </section>
+
+                                    </section>
+                                    <mat-form-field class="halfwidth">
+                                        <mat-label>If Others, Please Mention</mat-label>
+                                        <input matInput formControlName="ExpOtherFamiliarTech" placeholder="C#"
+                                            class="input-box">
+
+                                    </mat-form-field>
+                                    <div class="h24"></div>
+                                    <div class="ck-label">Are You Currently On Notice Period?*</div>
+                                    <mat-radio-group aria-label="Select an option" formControlName="onnoticeperiod">
+                                        <mat-radio-button value="1">
+                                            <div class="radiobox-content">Yes</div>
+                                        </mat-radio-button>
+                                        <mat-radio-button value="0">
+                                            <div class="radiobox-content">No</div>
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+
+                                    <div class="h16"></div>
+                                    <div class="row">
+                                        <div class="notice-container">
+                                            <div class="textfiled-label">If Yes, When Will Your Notice Period End?</div>
+                                            <mat-form-field>
+                                                <!-- <mat-label>Choose a date</mat-label> -->
+                                                <input matInput [matDatepicker]="picker">
+                                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="notice-container">
+                                            <div class="textfiled-label">How Long Is Your Notice Period??</div>
+
+                                            <mat-form-field>
+
+                                                <mat-select formControlName="noticeperiodlength">
+                                                    <mat-option *ngFor="let month of months" [value]="month">
+                                                        <p>{{ month }} Months</p>
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="h24"></div>
+                                    <div class="h16"></div>
+
+
+
+
+                                    <div class="ck-label">Have You Appeared For Any Test By Zeus In The Last 12 Months?*
+                                    </div>
+                                    <mat-radio-group aria-label="Select an option" formControlName="ehasappearedbefore">
+                                        <mat-radio-button value="1">
+                                            <div class="radiobox-content">Yes</div>
+                                        </mat-radio-button>
+                                        <mat-radio-button value="0">
+                                            <div class="radiobox-content">No</div>
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                    <div class="h16"></div>
+
+                                    <mat-form-field class="halfwidth">
+                                        <mat-label>If Yes, Which role did you apply for?</mat-label>
+                                        <input matInput formControlName="eroleappliedbefore"
+                                            placeholder="Quality Engineer">
+
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+
+
+                    </mat-accordion>
+
+
+
+
+
+
+                </div>
+                <div class="speacer-bw-stepper-content"></div>
+                <div class="buttons">
+                    <button mat-button matStepperPrevious type="button" color="success">PREVIOUS</button>
+                    <div style="width: 16px;"></div>
+                    <button mat-button matStepperNext type="button" (click)="step2submitted()"
+                        color="success">NEXT</button>
+                </div>
+
+            </mat-step>
+
+
+
+            <mat-step>
+                <ng-template matStepLabel>
+                    <p id="step-header-title"> Review and Proceed</p>
+                </ng-template>
+                <div class="speacer-bw-stepper-content"></div>
+                <div *ngIf="formsubmitted">
+                    <p>You are now done.</p>
+                </div>
+                <div *ngIf="!formsubmitted" class="notsubmitted">
+                    <h3>Personal Information</h3>
+                    <div class="preview-personalinfo">
+                        <div class="detail">
+                            <p class="small-font">First Name</p>
+                            <p class="big-font">{{ userRegister.get('personalinfo')!.get('firstName')!.value }}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="small-font">Last Name</p>
+                            <p class="big-font">{{ userRegister.get('personalinfo')!.get('lastName')!.value }}</p>
+                        </div>
+
+                        <div class="detail">
+                            <p class="small-font">Email</p>
+                            <p class="big-font">{{ userRegister.get('personalinfo')!.get('email')!.value }}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="small-font">Phone Number</p>
+                            <p class="big-font">{{ userRegister.get('personalinfo')!.get('phonenumber')!.value }}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="small-font">Portfolio URL(if any)</p>
+                            <p class="big-font">{{ userRegister.get('personalinfo')!.get('portfoliolink')!.value }}</p>
+                        </div>
+
+                        <div class="detail">
+                            <p class="small-font">Preferred Job Roles</p>
+                            <section *ngIf="toshowjobroles">
+                                <section *ngFor="let job of dummyjobroles, let i = index">
+                                    <p class="big-font">
+                                        {{jobrolesarray[job-1].role}}
+                                    </p>
+                                </section>
+                            </section>
+                        </div>
+
+                        <div class="detail">
+                            <p class="small-font input">If you are Registering via a referral, Please Mention full name
+                                of the Employee Who Referred You</p>
+                            <p class="big-font" *ngIf="userRegister.get('personalinfo')!.get('referrer')!.value ">{{
+                                userRegister.get('personalinfo')!.get('referrer')!.value }}</p>
+                            <p class="big-font" *ngIf="!userRegister.get('personalinfo')!.get('referrer')!.value">-</p>
+                        </div>
+
+                        <div class="detail">
+                            <mat-checkbox
+                                [checked]="userRegister.get('personalinfo')!.get('emailconsent')!.value==null?false:true"
+                                disabled>
+                                <p>Send me job related updates via mail</p>
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="grey"></div>
+
+                    <div class="detail">
+                        <div id="margin-h"></div>
+                        <div class="detail">
+                            <h3>Qualifications</h3>
+                        </div>
+
+                        <div class="eduqualification detail">
+                            <h3 class="title">Educational Qualifications</h3>
+                            <div class=" detail">
+                                <p class="small-font">Percentage</p>
+                                <p class="big-font">{{ userRegister.get('qualification')!.get('AggPercentage')!.value }}
+                                </p>
+                            </div>
+
+                            <div class=" detail">
+                                <p class="small-font">Year of Passing</p>
+                                <p class="big-font">{{ userRegister.get('qualification')!.get('yearpassing')!.value }}
+                                </p>
+                            </div>
+
+                            <div class=" detail">
+                                <p class="small-font">Qualification</p>
+                                <p class="big-font">{{ userRegister.get('qualification')!.get('selecteddegree')!.value
+                                    }}</p>
+                            </div>
+
+                            <div class=" detail">
+                                <p class="small-font">Stream</p>
+                                <p class="big-font">{{ userRegister.get('qualification')!.get('selectedstream')!.value
+                                    }}</p>
+                            </div>
+
+                            <div class=" detail">
+                                <p class="small-font">College</p>
+                                <p class="big-font">{{ userRegister.get('qualification')!.get('selectedcollege')!.value
+                                    }}</p>
+                            </div>
+
+                            <div class=" detail">
+                                <p class="small-font">If Others, Please Enter Your College Name</p>
+                                <p class="big-font"
+                                    *ngIf="userRegister.get('qualification')!.get('collegenameinput')!.value ">{{
+                                    userRegister.get('qualification')!.get('collegenameinput')!.value }}</p>
+                                <p class="big-font"
+                                    *ngIf="!userRegister.get('qualification')!.get('collegenameinput')!.value">-</p>
+                            </div>
+
+                            <div class=" detail">
+                                <p class="small-font">Where Is Your College Located?</p>
+                                <p class="big-font">{{
+                                    userRegister.get('qualification')!.get('collegelocationinput')!.value }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="profqualification detail">
+                            <h3 class="title">Professional Qualifications</h3>
+                            <div class=" detail ">
+                                <p class="small-font">Applicant Type</p>
+                                <p class="big-font"
+                                    *ngIf="userRegister.get('qualification')!.get('usertype')!.value =='1'">Fresher</p>
+                                <p class="big-font"
+                                    *ngIf="userRegister.get('qualification')!.get('usertype')!.value =='2'">Experienced
+                                </p>
+                            </div>
+
+
+                            <div class="detail" *ngIf="userRegister.get('qualification')!.get('usertype')!.value =='1'">
+                                <div class=" detail">
+                                    <p class="small-font">Select All The Technologies You Are Familiar In</p>
+                                    <section *ngIf="toshowFresherTech; else NoShow">
+                                        <section *ngFor="let t of dummyFreTech, let i = index">
+                                            <p class="big-font">
+                                                {{technologiesarray[t-1].technology}}
+                                            </p>
+                                        </section>
+                                    </section>
+                                    <ng-template #NoShow>
+                                        <p class="big-font">No Technology Selected</p>
+                                    </ng-template>
+
+                                </div>
+
+                                <div class="detail">
+                                    <p class="small-font">If Others, Please Mention</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('fresherdetails')!.get('FreOtherTech')!.value ">
+                                        {{
+                                        userRegister.get('qualification')!.get('fresherdetails')!.get('FreOtherTech')!.value
+                                        }}</p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('fresherdetails')!.get('FreOtherTech')!.value">
+                                        -</p>
+                                </div>
+
+                                <div class="detail">
+                                    <p class="small-font">Have You Appeared For Any Test By Zeus In The Last 12 Months?
+                                    </p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('fresherdetails')!.get('fhasappearedbefore')!.value">
+                                        -</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('fresherdetails')!.get('fhasappearedbefore')!.value=='0'">
+                                        No</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('fresherdetails')!.get('fhasappearedbefore')!.value=='1'">
+                                        Yes</p>
+                                </div>
+
+                                <div class=" detail">
+                                    <p class="small-font">If Yes, Which Role Did You Apply For?</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('fresherdetails')!.get('froleappliedbefore')!.value ">
+                                        {{
+                                        userRegister.get('qualification')!.get('fresherdetails')!.get('froleappliedbefore')!.value
+                                        }}</p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('fresherdetails')!.get('froleappliedbefore')!.value">
+                                        -</p>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="detail" *ngIf="userRegister.get('qualification')!.get('usertype')!.value =='2'">
+
+
+                                <div class=" detail">
+                                    <p class="small-font">Years Of Experience</p>
+                                    <p class="big-font">{{
+                                        userRegister.get('qualification')!.get('experienceddetails')!.get('yearsofexperience')!.value
+                                        }}</p>
+                                </div>
+
+                                <div class=" detail">
+                                    <p class="small-font">Current CTC(In Rupees)</p>
+                                    <p class="big-font">{{
+                                        userRegister.get('qualification')!.get('experienceddetails')!.get('currentctc')!.value
+                                        }}</p>
+                                </div>
+
+                                <div class=" detail">
+                                    <p class="small-font">Expected CTC(In Rupees)</p>
+                                    <p class="big-font">{{
+                                        userRegister.get('qualification')!.get('experienceddetails')!.get('expectedctc')!.value
+                                        }}</p>
+                                </div>
+
+
+                                <div class=" detail">
+                                    <p class="small-font">Select All The Technologies You Have Expertise In</p>
+                                    <section *ngIf="toshowExpExpertiseTech; else NoShow">
+                                        <section *ngFor="let t of dummyExpExpertiseTech, let i = index">
+                                            <p class="big-font">
+                                                {{technologiesarray[t-1].technology}}
+                                            </p>
+                                        </section>
+                                    </section>
+                                    <ng-template #NoShow>
+                                        <p class="big-font">No Technology Selected</p>
+                                    </ng-template>
+
+                                </div>
+
+                                <div class="detail">
+                                    <p class="small-font">If Others, Please Mention</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('ExpOtherExpertiseTech')!.value ">
+                                        {{
+                                        userRegister.get('qualification')!.get('experienceddetails')!.get('ExpOtherExpertiseTech')!.value
+                                        }}
+                                    </p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('experienceddetails')!.get('ExpOtherExpertiseTech')!.value">
+                                        -</p>
+                                </div>
+
+                                <div class=" detail">
+                                    <p class="small-font">Select All The Technologies You Are Familiar In</p>
+                                    <section *ngIf="toshowExpFamiliarTech; else NoShow">
+                                        <section *ngFor="let t of dummyExpFamiliarTech, let i = index">
+                                            <p class="big-font">
+                                                {{technologiesarray[t-1].technology}}
+                                            </p>
+                                        </section>
+                                    </section>
+                                    <ng-template #NoShow>
+                                        <p class="big-font">No Technology Selected</p>
+                                    </ng-template>
+
+                                </div>
+
+                                <div class="detail">
+                                    <p class="small-font">If Others, Please Mention</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('ExpOtherFamiliarTech')!.value ">
+                                        {{
+                                        userRegister.get('qualification')!.get('experienceddetails')!.get('ExpOtherFamiliarTech')!.value
+                                        }}</p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('experienceddetails')!.get('ExpOtherFamiliarTech')!.value">
+                                        -</p>
+                                </div>
+
+                                <div class="detail">
+                                    <p class="small-font">Are You Currently On Notice Period?</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('onnoticeperiod')!.value=='0'">
+                                        No</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('onnoticeperiod')!.value=='1'">
+                                        Yes</p>
+                                </div>
+
+                                <div class="detail">
+                                    <p class="small-font">If Yes, When Will Your Notice Period End?</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('noticeperiodenddate')!.value ">
+                                        {{datestr }}</p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('experienceddetails')!.get('noticeperiodenddate')!.value">
+                                        -</p>
+                                </div>
+
+                                <div class=" detail">
+                                    <p class="small-font">How Long Is Your Notice Period?(Mention In Months)</p>
+
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('noticeperiodlength')!.value ">
+                                        {{userRegister.get('qualification')!.get('experienceddetails')!.get('noticeperiodlength')!.value
+                                        }} Months
+                                    </p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('experienceddetails')!.get('noticeperiodenddate')!.value">
+                                        -</p>
+                                </div>
+
+
+
+                                <div class="detail">
+                                    <p class="small-font">Have You Appeared For Any Test By Zeus In The Last 12 Months?
+                                    </p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('ehasappearedbefore')!.value=='0'">
+                                        No</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('ehasappearedbefore')!.value=='1'">
+                                        Yes</p>
+                                </div>
+
+                                <div class=" detail">
+                                    <p class="small-font">If Yes, Which Role Did You Apply For?</p>
+                                    <p class="big-font"
+                                        *ngIf="userRegister.get('qualification')!.get('experienceddetails')!.get('eroleappliedbefore')!.value ">
+                                        {{
+                                        userRegister.get('qualification')!.get('experienceddetails')!.get('froleappliedbefore')!.value
+                                        }}</p>
+                                    <p class="big-font"
+                                        *ngIf="!userRegister.get('qualification')!.get('experienceddetails')!.get('eroleappliedbefore')!.value">
+                                        -</p>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="buttons" *ngIf="!previousbtn">
+                    <button mat-button matStepperPrevious>Previous</button>
+                    <!-- <button mat-button type="submit">Submit</button> -->
+                </div>
+
+            </mat-step>
+
+        </mat-stepper>
+
+    </form>
+
+
+</div>
