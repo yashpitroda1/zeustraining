@@ -15,39 +15,39 @@ using System.Security.Claims;
 namespace quantum_apis.Controllers
 {
     [Route("[controller]")]
-    //[Authorize(Roles = "admin")]
-    [Authorize(Roles = "user")]
+    [Authorize(Roles = "admin")]
+    // [Authorize(Roles = "user")]
 
     public class TestController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public TestController(IConfiguration configuration )
+        public TestController(IConfiguration configuration)
         {
-          
+
             _configuration = configuration;
-           
+
         }
         [HttpPost]
         public async Task<ActionResult> testAsync()
         {
-          
+
             using var connection = new MySqlConnection(_configuration.GetConnectionString("Default"));
             await connection.OpenAsync();
             using var command = new MySqlCommand("select * from walkin_instruction where walkinId=8", connection);
 
             using var reader = await command.ExecuteReaderAsync();
-            string x="";
+            string x = "";
             if (reader.HasRows)
             {
                 while (await reader.ReadAsync())
                 {
 
                     string generalInstructions = reader["generalInstructions"].ToString();
-                   var  result = JsonConvert.DeserializeObject<inst>(generalInstructions);
+                    var result = JsonConvert.DeserializeObject<inst>(generalInstructions);
                     Console.WriteLine(result.generalInstructions[0]);
-                     x = result.generalInstructions[1];
+                    x = result.generalInstructions[1];
                 }
             }
             return Ok(x);

@@ -32,7 +32,6 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(authkey)),
         ValidateIssuer = false,
         ValidateAudience = false,
- 
     };
 });
 

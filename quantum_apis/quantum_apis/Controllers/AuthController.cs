@@ -66,9 +66,9 @@ namespace quantum_apis.Controllers
                 return BadRequest("provide userEmail and password");
             }
             //LoginResDTO response = new LoginResDTO();
-            LoginResDTO responseObj = new() { userEmail=model.userEmail,role=model.role};
+            LoginResDTO responseObj = new() { userEmail = model.userEmail, role = model.role };
 
-            using var connection =  new MySqlConnection(_configuration.GetConnectionString("Default"));
+            using var connection = new MySqlConnection(_configuration.GetConnectionString("Default"));
             await connection.OpenAsync();
             using var command = new MySqlCommand("select * from user where password=@pass AND userEmail=@email", connection);
             command.Parameters.AddWithValue("@pass", model.password);
@@ -83,16 +83,13 @@ namespace quantum_apis.Controllers
                     string uid = reader["id"].ToString();
                     string userEmail = reader["userEmail"].ToString();
                     int uidInt = Convert.ToInt32(reader["id"]);
-
-                   
-             
                     responseObj.id = uidInt;
                 }
             }
             else
             {
                 await connection.CloseAsync();
-                return  Ok("invalid username and password - not match with database");
+                return Ok("invalid username and password - not match with database");
             }
             await connection.CloseAsync();
 
@@ -104,7 +101,7 @@ namespace quantum_apis.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(new Claim[]
-                {      
+                {
                         new Claim(ClaimTypes.Email, model.userEmail),
                         new Claim(ClaimTypes.Role, model.role),
                         new Claim(ClaimTypes.NameIdentifier, responseObj.id.ToString())
@@ -119,14 +116,12 @@ namespace quantum_apis.Controllers
             Console.WriteLine("----");
             Console.WriteLine(responseObj.tokenExpiresAt);
             Console.WriteLine(responseObj.userEmail);
-
-
             Console.WriteLine("----");
 
             return Ok(responseObj);
         }
     }
-   
-   
+
+
 }
 

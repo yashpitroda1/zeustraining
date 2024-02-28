@@ -21,14 +21,11 @@ namespace quantum_apis.Controllers
     [Route("api/[controller]")]
     // [Authorize(Roles = "admin")]
     // [Authorize(Roles = "user")]
-
     public class WalkinController : ControllerBase
     {
-
         private readonly IConfiguration _configuration;
         public WalkinController(IConfiguration configuration)
         {
-
             _configuration = configuration;
 
         }

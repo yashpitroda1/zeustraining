@@ -8,6 +8,7 @@ import { LoginPageComponent } from './view/login-page/login-page.component';
 import { WalkinDetailsComponent } from './view/walkin/walkin-details/walkin-details.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { ApplyInWalkinComponent } from './view/walkin/walkin-details/apply-in-walkin/apply-in-walkin.component';
+import { RegistrationPageComponent } from './view/registration-page/registration-page.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/walkin", pathMatch: 'full' },
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: "login", component: LoginPageComponent,
+  },
+  {
+    path: "register", component: RegistrationPageComponent,
   }
 ];
 

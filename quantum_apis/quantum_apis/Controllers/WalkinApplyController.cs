@@ -49,7 +49,7 @@ namespace quantum_apis.Controllers
             {
                 Console.WriteLine("in try");
                 string query = "";
-
+                // call(prociser name)
                 using (MySqlCommand command = new MySqlCommand(@"
                 INSERT INTO user_application (userId, walkinId,selectedTimeslotId,dateCreated) VALUES (@userId, @walkinId,@selectedTimeslotId,@dateCreated);"
                 , connection))
